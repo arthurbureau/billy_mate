@@ -1,2 +1,21 @@
 <h1>Bills#edit</h1>
 <p>Find me in app/views/bills/edit.html.erb</p>
+
+
+<div class="container">
+
+  <h2>Mettre à jour la facture</h2>
+
+  <%= simple_form_for @bill do |f| %>
+
+    <%= f.input :category, collection: Bill::CATEGORY %>
+    <%= f.input :provider %>
+    <%= f.input :amount %>
+    <%= f.input :payment_date %>
+    <%= f.input :user, collection: current_user.flat.users, :label_method => lambda { |user| user.first_name } %>
+    <%= f.input :contract_picture %>
+
+    <%= f.button :submit, "Mettre à jour", class: "btn btn-success btn-lg btn-block"%>
+  <% end %>
+
+</div>
