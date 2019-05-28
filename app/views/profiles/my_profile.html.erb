@@ -1,0 +1,18 @@
+<h1> Mes factures </h1>
+<%= link_to "Ajouter une facture", new_bill_path %>
+
+<ul>
+  <% @bills.each do |bill| %>
+    <li>
+      <%= bill.category %> - <%= bill.provider %> - <%= bill.amount %> €
+      <%= link_to "Edit", edit_bill_path(bill) %>
+      <%= link_to "Delete", bill_path(bill), method: :delete %>
+    </li>
+  <% end %>
+</ul>
+
+<h1> Mes échéances </h1>
+
+
+
+<h1> Mon appartement </h1>
