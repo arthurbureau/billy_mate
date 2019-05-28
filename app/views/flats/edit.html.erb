@@ -1,2 +1,8 @@
-<h1>Flats#edit</h1>
-<p>Find me in app/views/flats/edit.html.erb</p>
+<h2>Modifie ta Coloc</h2>
+
+  <%= simple_form_for @flat do |f| %>
+
+    <%= f.input :name%>
+
+    <%= f.button :submit, "Modifie ta coloc!", class: "btn btn-primary btn-lg btn-block"%>
+  <% end %>
