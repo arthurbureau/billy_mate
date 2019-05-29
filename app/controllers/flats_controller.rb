@@ -6,6 +6,11 @@ class FlatsController < ApplicationController
     @flat = Flat.new
   end
 
+  def show
+    @flat = Flat.find(params[:id])
+  end
+
+
   def create
     @flat = Flat.new(set_flat_params)
     if @flat.save

@@ -4,4 +4,6 @@ class Bill < ApplicationRecord
   belongs_to :flat
   has_many :transactions, dependent: :destroy
 
+  monetize :amount_cents
+
 end

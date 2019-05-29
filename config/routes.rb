@@ -7,10 +7,16 @@ Rails.application.routes.draw do
   get '/join_flat', to: 'profiles#join_flat', as: :join_flat
   get '/categories', to: 'bills#display_categories', as: :categories
 
-  resources :flats, only: [:new, :create, :edit, :update, :destroy]
-  resources :bills, only: [:index, :new, :create, :edit, :update, :destroy] do
+  resources :flats, only: [:new, :show, :create, :edit, :update, :destroy] do
+    resources :users, only: [:update]
+  end
+  resources :bills, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :transactions, only: [:create]
   end
+
+
+
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

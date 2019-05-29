@@ -33,16 +33,16 @@ user3 = User.create!(nickname: 'romish', first_name: 'Roman', last_name: 'Prat-B
 
 puts 'Creation bills'
 
-elect = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount: 60, payment_date: Date.new(2019, 5, 23))
-gaz = Bill.create!(flat: flat1, category: 'Gaz', provider: 'Gaz de Bordeaux', user: user2, amount: 90, payment_date: Date.new(2019, 5, 15))
-internet = Bill.create!(flat: flat1, category: 'Internet', provider: 'SFR', user: user3, amount: 20, payment_date: Date.new(2019, 5, 6))
-eau = Bill.create!(flat: flat1, category: 'Eau', provider: 'Bordeaux Métropole', user: user3, amount: 20, payment_date: Date.new(2019, 5, 20))
+elect = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 5, 23))
+gaz = Bill.create!(flat: flat1, category: 'Gaz', provider: 'Gaz de Bordeaux', user: user2, amount_cents: 9000, payment_date: Date.new(2019, 5, 15))
+internet = Bill.create!(flat: flat1, category: 'Internet', provider: 'SFR', user: user3, amount_cents: 2000, payment_date: Date.new(2019, 5, 6))
+eau = Bill.create!(flat: flat1, category: 'Eau', provider: 'Bordeaux Métropole', user: user3, amount_cents: 2000, payment_date: Date.new(2019, 5, 20))
 
 #gérer contracts pictures avec Cloudinary
 
 puts 'Creation transactions'
 
-elect_transaction1 = Transaction.create!(bill: elect, user: user2, amount: 20, payment_date: Date.new(2019, 5, 25))
-elect_transaction2 = Transaction.create!(bill: elect, user: user3, amount: 20, payment_date: Date.new(2019, 6, 5))
+elect_transaction1 = Transaction.create!(bill: elect, user: user2, amount_cents: 2000, payment_date: Date.new(2019, 5, 25))
+elect_transaction2 = Transaction.create!(bill: elect, user: user3, amount_cents: 2000, payment_date: Date.new(2019, 6, 5))
 
 puts "Seed finished !"

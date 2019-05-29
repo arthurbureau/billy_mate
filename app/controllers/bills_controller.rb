@@ -8,6 +8,7 @@ class BillsController < ApplicationController
 
   def show
     @bill = Bill.find(params[:id])
+    @transaction = Transaction.new(bill: @bill)
   end
 
   def new
