@@ -10,9 +10,15 @@
 puts "Begin of Seed"
 puts 'Destoying all'
 
+# users = User.all
+# users.each do |user|
+#   user.flat = nil
+# end
+
+User.destroy_all
 Flat.destroy_all
 Bill.destroy_all
-User.destroy_all
+
 
 puts 'Creation flats'
 flat1 = Flat.create!(name: 'Coloc du Soleil')
@@ -34,6 +40,9 @@ eau = Bill.create!(flat: flat1, category: 'Eau', provider: 'Bordeaux Métropole'
 
 #gérer contracts pictures avec Cloudinary
 
+puts 'Creation transactions'
 
+elect_transaction1 = Transaction.create!(bill: elect, user: user2, amount: 20, payment_date: Date.new(2019, 5, 25))
+elect_transaction2 = Transaction.create!(bill: elect, user: user3, amount: 20, payment_date: Date.new(2019, 6, 5))
 
 puts "Seed finished !"
