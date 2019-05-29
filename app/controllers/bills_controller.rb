@@ -1,10 +1,17 @@
 class BillsController < ApplicationController
+  def display_categories
+  end
 
   def index
     @bills = Bill.all
   end
 
+  def show
+    @bill = Bill.find(params[:id])
+  end
+
   def new
+    @category = params[:category]
     @bill = Bill.new
     @bill.flat = current_user.flat
     @flat = current_user.flat
@@ -17,7 +24,7 @@ class BillsController < ApplicationController
     @bill.user = @user_payeur
     if @bill.save
       flash[:notice] = "Yay! 🎉 tu as ajouté une nouvelle facture."
-      redirect_to root_path
+      redirect_to categories_path
     else
       render :new
     end

@@ -1,0 +1,11 @@
+<h1> Dashboard </h1>
+
+(liste des bills)
+
+<ul>
+  <% @bills.each do |bill| %>
+    <li><% bill.category %></li>
+  <% end %>
+</ul>
+
+  <%= link_to "ajouter une facture", categories_path, class: "btn btn-primary btn-lg"%>
