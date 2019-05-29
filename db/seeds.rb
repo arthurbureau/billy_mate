@@ -18,6 +18,7 @@ puts 'Destoying all'
 User.destroy_all
 Flat.destroy_all
 Bill.destroy_all
+Transaction.destroy_all
 
 
 puts 'Creation flats'
@@ -28,6 +29,7 @@ puts 'Creation user'
 user1 = User.create!(nickname: 'tutur', first_name: 'Arthur', last_name: 'Bureau', phone_number: '06 81 10 11 26', email: 'arthur@gmail.com', password: 'xxxxxxx', flat: flat1)
 user2 = User.create!(nickname: 'anneso', first_name: 'Anne-Sophie', last_name: 'Ducamin', phone_number: '07 62 10 11 26', email: 'anneso@gmail.com', password: 'xxxxxxx', flat: flat1)
 user3 = User.create!(nickname: 'romish', first_name: 'Roman', last_name: 'Prat-Bourdon', phone_number: '06 41 16 98 26', email: 'roman@gmail.com', password: 'xxxxxxx', flat: flat1)
+user4 = User.create!(nickname: 'alex', first_name: 'Alexandrine', last_name: 'Lamy', phone_number: '0643 16 98 26', email: 'alex@gmail.com', password: 'xxxxxxx', flat: nil)
 
 #gérer les avatar avec Cloudinary
 

@@ -14,6 +14,7 @@
     <%= f.input :payment_date %>
     <%= f.input :user, collection: current_user.flat.users, :label_method => lambda { |user| user.first_name } %>
     <%= f.input :contract_picture %>
+    <%= f.input :contract_picture, as: :hidden %>
 
     <%= f.button :submit, "Mettre à jour", class: "btn btn-success btn-lg btn-block"%>
   <% end %>

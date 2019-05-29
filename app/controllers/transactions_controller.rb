@@ -1,12 +1,11 @@
 class TransactionsController < ApplicationController
   def create
-    raise
     @bill = Bill.find(params[:bill_id])
     @transaction = @bill.transactions.new(transaction_params)
 
     if @transaction.save
       flash[:notice] = "Youpi! 🎉 tu viens de créer ta coloc!"
-      redirect_to bills_path
+      redirect_to bill_path(@bill)
     else
       render :new
     end

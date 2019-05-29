@@ -1,12 +1,15 @@
-<%= @bill.category %>
-<%= humanized_money_with_symbol(@bill.amount) %>
+<h1><%= @bill.category %> payé par <%= @bill.user.first_name %> - <%= humanized_money_with_symbol(@bill.amount) %></h1>
+
+<h2>Qui a remboursé ?</h2>
 <% @bill.transactions.each do |transaction| %>
 <p>
-<%= transaction.user.first_name %> a remboursé <%= transaction.amount %> € le <%= transaction.payment_date %>
+<%= transaction.user.first_name %> a remboursé <%= transaction.amount %> le <%= transaction.payment_date %>
 </p>
 <% end %>
 
-<p>Il devra payer <%= @transaction.amount %></p>
+
+<h2>Procéder aux remboursement</h2>
+<p> <%= @transaction.amount %></p>
 
 <%= simple_form_for [@bill, @transaction] do |f| %>
   <%= f.association :user %>
