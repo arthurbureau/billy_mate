@@ -1,1 +1,46 @@
 // Specific CSS for your home-page
+.container {
+  background: #f1f1f1;
+}
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-weight: bold;
+}
+
+h2 {
+  padding-top: 15px;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Montaga', serif;
+}
+
+h3 {
+  padding-top: 15px;
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Montaga', serif;
+}
+
+.button-align-end {
+  margin: 20px;
+  padding: 10px;
+  font-family: 'Montaga', serif;
+}
+
+.home-card img{
+  margin-top: 10px;
+  height: 220px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.list-inline li {
+  display: inline-block;
+  padding-left: 0px 15px;
+  align-items: center;
+}
+
+
