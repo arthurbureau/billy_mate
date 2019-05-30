@@ -1,3 +1,4 @@
+
 <div class="container">
 
   <div class="title-Billy-Mate">
@@ -21,5 +22,25 @@
   </div>
 
 </div>
+
+<% if user_signed_in? %>
+
+  J'ai une coloc
+  <%= link_to "c'est parti!", bills_path, class: "btn btn-primary btn-lg"%>
+
+  Je n'ai pas de coloc
+  <%= link_to "c'est parti!", join_flat_path, class: "btn btn-primary btn-lg"%>
+
+<% else %>
+
+
+  <h2>Votre nouveau colocataire qui vous aidera à gérer vos factures entre colocataires!</h2>
+
+
+  <%= link_to "c'est parti!", new_user_session_path, class: "btn btn-primary btn-lg"%>
+
+
+<% end %>
+
 
 

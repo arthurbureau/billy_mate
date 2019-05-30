@@ -1,20 +1,23 @@
-<h1>Bills#new</h1>
-<p>Find me in app/views/bills/new.html.erb</p>
 
+<div class="container">
+  <% if @category.present? %>
+    <h1><%= @category %></h1>
+  <% else %>
+    <h1>Autre</h1>
+  <% end %>
 
+  <%= simple_form_for [@bill] do |f| %>
+    <% if @category.present? %>
+      <%= f.input :category, collection: Bill::CATEGORY, selected: @category, as: :hidden %>
+    <% else %>
+      <%= f.input :category, collection: Bill::CATEGORY %>
+    <% end %>
+    <%= f.input :provider %>
+    <%= f.input :amount %>
+    <%= f.input :payment_date %>
+    <%= f.input :user, collection: current_user.flat.users, :label_method => lambda { |user| user.first_name } %>
+    <%= f.input :contract_picture %>
 
-<h2>Ajoute une nouvelle facture</h2>
-
-<p>Flat : <%= current_user.flat %></p>
-
-<%= simple_form_for [@bill] do |f| %>
-
-  <%= f.input :category, collection: Bill::CATEGORY %>
-  <%= f.input :provider %>
-  <%= f.input :amount %>
-  <%= f.input :payment_date %>
-  <%= f.input :user, collection: current_user.flat.users, :label_method => lambda { |user| user.first_name } %>
-  <%= f.input :contract_picture %>
-
-  <%= f.button :submit, "Ajouter", class: "btn btn-success btn-lg btn-block" %>
-<% end %>
+    <%= f.button :submit, "Ajouter", class: "btn btn-success btn-lg btn-block" %>
+  <% end %>
+</div>

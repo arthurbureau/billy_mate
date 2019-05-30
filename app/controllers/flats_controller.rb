@@ -7,12 +7,11 @@ class FlatsController < ApplicationController
   end
 
   def create
-    @user = current_user
     @flat = Flat.new(set_flat_params)
-    @flat.user = @user
     if @flat.save
+      current_user.flat = @flat
       flash[:notice] = "Youpi! 🎉 tu viens de créer ta coloc!"
-      redirect_to profile_path
+      redirect_to bills_path
     else
       render :new
     end
