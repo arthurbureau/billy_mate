@@ -11,7 +11,7 @@
   </head>
   <body>
     <% current_uri = request.env['PATH_INFO'] %>
-    <%= render 'shared/navbar' unless current_uri == "/" %>
+    <%= render 'shared/navbar'  %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>

@@ -1,24 +1,48 @@
-<h1> Mes factures </h1>
-<%= link_to "Ajouter une facture", new_bill_path %>
+<div class="container">
 
-<ul>
+<div class="my_profil_set" >
+  <h1>Mon Profil</h1>
+
+
+  <h4>Mes factures</h4>
+
   <% @bills.each do |bill| %>
-      <%= bill.category %> - <%= bill.provider %> - <%= bill.amount %> €
-      <div class="edited-bill">
-        <%= link_to edit_bill_path(bill) do%>
-          <p class="card-text"><i class="far fa-edit"></i></p>
-        <% end %>
+
+    <div class="d-flex w-100 justify-content-between mb-4">
+      <div>
+        <%= bill.category %> - <%= bill.provider %> - <%= bill.amount %> €
       </div>
-      <div class="deleted-bill">
+      <%= link_to edit_bill_path(bill), class: "edited-bill" do%>
+        <i class="far fa-edit card-text"></i>
+      <% end %>
+      <%= link_to bill_path(bill), method: :delete, id: "delete-link", class: "deleted-bill" do %>
         <i class="fas fa-trash-alt" ></i>
-        <%= link_to "", bill_path(bill), method: :delete, id: "delete-link", class: "hidden" %>
-      </div>
+      <% end %>
+    </div>
+
+    <%= link_to "Ajouter une facture", new_bill_path, class: "middlebutton" %>
+
   <% end %>
-</ul>
 
-<h1> Mes échéances </h1>
-
+  <h4> Mes échéances </h4>
 
 
-<h1> Mon appartement </h1>
 
+  <h4> Mon appartement </h4>
+
+<div class="d-flex w-100 justify-content-between mb-4">
+      <div>
+         <%= current_user.flat.name %>
+      </div>
+      <%= link_to edit_flat_path(current_user.flat), class: "edited-bill" do%>
+        <i class="far fa-edit card-text"></i>
+      <% end %>
+
+        <i class="fas fa-trash-alt" ></i>
+
+    </div>
+
+
+  </div>
+
+</div>
