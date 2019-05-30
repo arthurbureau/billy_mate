@@ -19,10 +19,11 @@ class BillsController < ApplicationController
   end
 
   def create
-    user_payeur = User.find(params[:bill][:user].to_i) if params[:bill][:user].to_i != 0
+    @category = params[:bill][:category]
+    user_payeur = User.find(params[:bill][:user].to_i) if params[:bill][:user].present?
     @bill = Bill.new(set_bill_params)
     @bill.flat = current_user.flat
-    @bill.user = user_payeur || nil
+    @bill.user = user_payeur
     if @bill.save
       flash[:notice] = "Yay! 🎉 tu as ajouté une nouvelle facture."
       redirect_to categories_path

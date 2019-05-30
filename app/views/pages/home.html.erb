@@ -1,10 +1,11 @@
 <% if user_signed_in? %>
 
-  J'ai une coloc
-  <%= link_to "c'est parti!", bills_path, class: "btn btn-primary btn-lg"%>
 
-  Je n'ai pas de coloc
-  <%= link_to "c'est parti!", join_flat_path, class: "btn btn-primary btn-lg"%>
+Je créé une coloc
+ <%= link_to "c'est parti!", new_flat_path, class: "btn btn-primary btn-lg"%>
+
+  Je rejoins une coloc
+  <%= link_to "Rejoindre un appart", join_flat_path, class: "btn btn-primary btn-lg"%>
 
 <% else %>
 
@@ -16,11 +17,4 @@
 
 
 <% end %>
-
-
-
-
-
-
-
 
