@@ -1,9 +1,6 @@
 class FlatsController < ApplicationController
    # resources :flats, only: [:new, :create, :edit, :update, :destroy]
 
-
-
-
   def show
     @flat = Flat.find(params[:id])
   end
