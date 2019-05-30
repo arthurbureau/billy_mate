@@ -3,7 +3,7 @@
   <% if @category.present? %>
     <h1><%= @category %></h1>
   <% else %>
-    <h1>Autre</h1>
+    <h1>Ajouter une facture</h1>
   <% end %>
 
   <%= simple_form_for [@bill] do |f| %>
