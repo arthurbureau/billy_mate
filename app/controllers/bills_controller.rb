@@ -1,14 +1,28 @@
 class BillsController < ApplicationController
   def display_categories
+    @bills = current_user.flat.bills
   end
 
+  # def category_exist?(category)
+  #   current_user.flat.bills.each do |bill_de_lappart|
+  #     bill_de_lappart.category == category
+  #   end
+  # end
+
   def index
-    @bills = Bill.all
+    redirect_to root_path unless current_user.flat
+    @bills = current_user.flat&.bills
   end
 
   def show
-    @bill = Bill.find(params[:id])
-    @transaction = Transaction.new(bill: @bill)
+    if params[:user].present?
+      @user = User.find(params[:user])
+      @bill = Bill.find(params[:id])
+      @transaction = Transaction.new(bill: @bill, user: @user)
+      @user_already_paid = Transaction.find_by(user: @user, bill: @bill).present?
+    else
+      redirect_to bills_path
+    end
   end
 
   def new

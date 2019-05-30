@@ -1,5 +1,7 @@
 class FlatsController < ApplicationController
-   # resources :flats, only: [:new, :create, :edit, :update, :destroy]
+  def join_flat
+    redirect_to bills_path if current_user.flat_id.present?
+  end
 
   def show
     @flat = Flat.find(params[:id])

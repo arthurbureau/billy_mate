@@ -3,7 +3,4 @@ class ProfilesController < ApplicationController
     @bills = current_user.bills
   end
 
-  def join_flat
-  end
-
 end

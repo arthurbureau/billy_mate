@@ -7,12 +7,14 @@
 </p>
 <% end %>
 
+<% unless @user_already_paid %>
 
-<h2>Procéder aux remboursement</h2>
-<p> <%= @transaction.amount %></p>
+  <p> </p>
+  <%= simple_form_for [@bill, @transaction] do |f| %>
+    <%= f.association :user, as: :hidden %>
+    <%= f.association :bill, as: :hidden %>
 
-<%= simple_form_for [@bill, @transaction] do |f| %>
-  <%= f.association :user %>
-  <%= f.submit %>
+    <%= f.button :submit, "Rembourser #{@transaction.amount}", class: "btn btn-success btn-lg btn-block" %>
+  <% end %>
+
 <% end %>
-

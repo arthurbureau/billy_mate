@@ -1,8 +1,0 @@
-<div class="container">
-  <h2>Qui a payé ?</h2>
-
-  <%= simple_form_for @flat do |f| %>
-    <%= f.input :user, collection: current_user.flat.users, :label_method => lambda { |user| user.first_name } %>
-    <%= f.button :submit, "Je rembourse", class: "btn btn-primary btn-lg btn-block"%>
-  <% end %>
-</div>

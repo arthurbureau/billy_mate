@@ -1,11 +1,10 @@
 <div class="container">
 
 <div class="my_profil_set" >
-  <h1>Mon Profil</h1>
-
-
-  <h4>Mes factures</h4>
-
+  
+<h1>Hello <%= current_user.first_name %></h1>
+  
+<h4> Mes factures </h4>
   <% @bills.each do |bill| %>
 
     <div class="d-flex w-100 justify-content-between mb-4">
@@ -24,25 +23,19 @@
 
   <% end %>
 
-  <h4> Mes échéances </h4>
 
+  <h4> Mes échéances </h4>
 
 
   <h4> Mon appartement </h4>
 
 <div class="d-flex w-100 justify-content-between mb-4">
-      <div>
-         <%= current_user.flat.name %>
-      </div>
+  <div>
+     <%= current_user.flat.name %>
+  </div>
       <%= link_to edit_flat_path(current_user.flat), class: "edited-bill" do%>
         <i class="far fa-edit card-text"></i>
       <% end %>
-
         <i class="fas fa-trash-alt" ></i>
-
-    </div>
-
-
-  </div>
-
 </div>
+

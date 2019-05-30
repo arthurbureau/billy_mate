@@ -3,20 +3,27 @@
   background: #f1f1f1;
 }
 
-.title-align-right {
+h1 {
+  font-size: 30px;
+  text-align: center;
+  .title-align-right {
   text-align: right;
   font-size: 30px;
   font-family: 'Pacifico', cursive;
   color: #006378;
 }
 
+
+.title-Billy-Mate > h1 {
+  text-align: right;
+}
+
+
 .logo-size {
   padding-top: 20px;
   width: 40px;
   text-align: left;
 }
-
-
 
 h2 {
   font-size: 35px;
