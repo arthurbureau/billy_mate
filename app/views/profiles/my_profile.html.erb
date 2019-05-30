@@ -3,11 +3,16 @@
 
 <ul>
   <% @bills.each do |bill| %>
-    <li>
       <%= bill.category %> - <%= bill.provider %> - <%= bill.amount %> €
-      <%= link_to "Edit", edit_bill_path(bill) %>
-      <%= link_to "Delete", bill_path(bill), method: :delete %>
-    </li>
+      <div class="edited-bill">
+        <%= link_to edit_bill_path(bill) do%>
+          <p class="card-text"><i class="far fa-edit"></i></p>
+        <% end %>
+      </div>
+      <div class="deleted-bill">
+        <i class="fas fa-trash-alt" ></i>
+        <%= link_to "", bill_path(bill), method: :delete, id: "delete-link", class: "hidden" %>
+      </div>
   <% end %>
 </ul>
 
@@ -16,5 +21,4 @@
 
 
 <h1> Mon appartement </h1>
-
 
