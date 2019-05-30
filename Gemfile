@@ -1,3 +1,4 @@
+
 source 'https://rubygems.org'
 ruby '2.5.3'
 
@@ -11,6 +12,7 @@ gem 'redis'
 
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'

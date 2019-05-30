@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_05_30_154952) do
   create_table "bills", force: :cascade do |t|
     t.string "category"
     t.string "provider"
+    t.integer "amount"
     t.date "payment_date"
     t.string "contract_picture"
     t.bigint "user_id"
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_05_30_154952) do
   create_table "transactions", force: :cascade do |t|
     t.bigint "bill_id"
     t.bigint "user_id"
+    t.integer "amount"
     t.date "payment_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

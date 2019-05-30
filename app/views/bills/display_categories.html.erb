@@ -1,22 +1,16 @@
 <div class="container">
-  <h1>Choisi une categorie</h1>
 
-<div class="my-3">
-
-    <%= link_to "Gaz", new_bill_path(category: 'Gaz'),  class: "btn btn-primary btn-lg" %>
-
-</div>
-
+  <h1>Choisis une categorie</h1>
   <div class="my-3">
-
-      <%= link_to "Electricité", new_bill_path(category: 'Electricité'),  class: "btn btn-primary btn-lg" %>
-
+    <%= link_to "Gaz", new_bill_path(category: 'Gaz'),  class: "btn btn-primary btn-lg" %>
   </div>
 
   <div class="my-3">
+      <%= link_to "Electricité", new_bill_path(category: 'Electricité'),  class: "btn btn-primary btn-lg" %>
+  </div>
 
+  <div class="my-3">
       <%= link_to "Internet", new_bill_path(category: 'Internet'),  class: "btn btn-primary btn-lg" %>
-
   </div>
 
   <div class="my-3">

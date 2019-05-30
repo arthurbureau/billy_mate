@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  # def quit_a_flat
+  #   current_user.flat = nil
+  #   redirect_to root_path
+  # end
+
   def update
     @flat = Flat.find_by(token: user_params[:token])
 
