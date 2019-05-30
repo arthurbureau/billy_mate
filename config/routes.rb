@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/join_flat', to: 'profiles#join_flat', as: :join_flat
   get '/categories', to: 'bills#display_categories', as: :categories
 
+
   resources :flats, only: [:new, :show, :create, :edit, :update, :destroy] do
     resources :users, only: [:update]
   end
