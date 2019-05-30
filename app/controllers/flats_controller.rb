@@ -1,7 +1,6 @@
 class FlatsController < ApplicationController
    # resources :flats, only: [:new, :create, :edit, :update, :destroy]
 
-
   def new
     @flat = Flat.new
   end
