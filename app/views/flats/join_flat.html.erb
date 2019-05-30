@@ -1,0 +1,21 @@
+Vous n'avez pas encore rejoins un appartement
+
+2/ Rejoindre un appart
+
+<p>
+input : entrer le lien de coloc.
++Button : quant tu clique sur le bouton, tu enregistre flat_id au USER et redirection au DASBoAD (bills_path)
+?????
+</p>
+
+
+<div class="container">
+  <h2>Rejoins ta coloc!</h2>
+  <p>rentre le lien :</p>
+
+  <%= simple_form_for current_user  do |f| %>
+    <%= f.input :token %>
+
+    <%= f.button :submit, "Rejoins ta coloc!", class: "btn btn-primary btn-lg btn-block"%>
+  <% end %>
+</div>

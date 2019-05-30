@@ -1,19 +1,22 @@
 class TransactionsController < ApplicationController
   def create
-    @bill = Bill.find(params[:bill_id])
-    @transaction = @bill.transactions.new(transaction_params)
+
+    @transaction = Transaction.new(transaction_params)
+    # @transaction.user = User.find(params[:transaction][:user_id])
+    # @transaction.bill = Bill.find(params[:transaction][:bill_id])
 
     if @transaction.save
-      flash[:notice] = "Youpi! 🎉 tu viens de créer ta coloc!"
-      redirect_to bill_path(@bill)
+      flash[:notice] = "Ton remboursement a été validé!"
+      redirect_to bill_path(@transaction.bill, user: @transaction.user)
     else
-      render :new
+      redirect_to bill_path(@transaction.bill)
+            # render "bills/show"
     end
   end
 
   private
 
   def transaction_params
-    params.require(:transaction).permit(:user_id)
+    params.require(:transaction).permit(:user_id, :bill_id)
   end
 end

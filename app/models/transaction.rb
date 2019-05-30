@@ -1,7 +1,7 @@
 class Transaction < ApplicationRecord
   belongs_to :bill
   belongs_to :user
-
+  validates :user_id, uniqueness: { scope: :bill_id, message: "tu as déjà payé" }
   monetize :amount_cents
 
   after_initialize :set_amount

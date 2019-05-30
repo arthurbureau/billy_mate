@@ -2,8 +2,13 @@
 
 (liste des bills)
 <ul>
-  <% @bills.each do |bill| %>
-    <li><%= bill.category %> <%= bill.provider %></li>
+  <% @bills&.each do |bill| %>
+    <li><%= bill.category %>  %>
+      <% bill.flat.users.each do |user| %>
+        - <%= user.first_name %>
+        <%= link_to "rembourser", bill_path(bill, user: user) %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
 

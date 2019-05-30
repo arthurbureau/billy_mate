@@ -17,6 +17,8 @@ class User < ApplicationRecord
   validates :phone_number, presence: true, uniqueness: true
   # validates :phone_number, format: { with: / \A(\+33 6|0[1-9]((\s|\W|)\d{2}){4}$)\z/, message: "wrong format for phone_number" }
 
+  attr_accessor :token
+
   def to_s
     first_name
   end
