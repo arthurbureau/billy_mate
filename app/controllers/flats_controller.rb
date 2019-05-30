@@ -1,14 +1,23 @@
 class FlatsController < ApplicationController
    # resources :flats, only: [:new, :create, :edit, :update, :destroy]
 
+  def show
+    @flat = Flat.find(params[:id])
+  end
+
   def new
-    @flat = Flat.new
+    if current_user.flat.present?
+      redirect_to bills_path
+    else
+      @flat = Flat.new
+    end
   end
 
   def create
     @flat = Flat.new(set_flat_params)
     if @flat.save
       current_user.flat = @flat
+      current_user.save
       flash[:notice] = "Youpi! 🎉 tu viens de créer ta coloc!"
       redirect_to bills_path
     else
