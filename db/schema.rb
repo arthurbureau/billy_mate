@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_27_164403) do
+ActiveRecord::Schema.define(version: 2019_05_29_134056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,13 +18,13 @@ ActiveRecord::Schema.define(version: 2019_05_27_164403) do
   create_table "bills", force: :cascade do |t|
     t.string "category"
     t.string "provider"
-    t.integer "amount"
     t.date "payment_date"
     t.string "contract_picture"
     t.bigint "user_id"
     t.bigint "flat_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "amount_cents", default: 0, null: false
     t.index ["flat_id"], name: "index_bills_on_flat_id"
     t.index ["user_id"], name: "index_bills_on_user_id"
   end
@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 2019_05_27_164403) do
   create_table "transactions", force: :cascade do |t|
     t.bigint "bill_id"
     t.bigint "user_id"
-    t.integer "amount"
     t.date "payment_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "amount_cents", default: 0, null: false
     t.index ["bill_id"], name: "index_transactions_on_bill_id"
     t.index ["user_id"], name: "index_transactions_on_user_id"
   end

@@ -3,7 +3,6 @@ class CreateBills < ActiveRecord::Migration[5.2]
     create_table :bills do |t|
       t.string :category
       t.string :provider
-      t.integer :amount
       t.date :payment_date
       t.string :contract_picture
       t.references :user, foreign_key: true

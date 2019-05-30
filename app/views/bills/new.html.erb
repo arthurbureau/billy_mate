@@ -8,7 +8,7 @@
 
   <%= simple_form_for [@bill] do |f| %>
     <% if @category.present? %>
-      <%= f.input :category, collection: Bill::CATEGORY, selected: @category, as: :hidden %>
+      <%= f.input :category, input_html: { value: @category }, as: :hidden %>
     <% else %>
       <%= f.input :category, collection: Bill::CATEGORY %>
     <% end %>
@@ -17,6 +17,7 @@
     <%= f.input :payment_date %>
     <%= f.input :user, collection: current_user.flat.users, :label_method => lambda { |user| user.first_name } %>
     <%= f.input :contract_picture %>
+    <%= f.input :contract_picture, as: :hidden %>
 
     <%= f.button :submit, "Ajouter", class: "btn btn-success btn-lg btn-block" %>
   <% end %>
