@@ -2,13 +2,11 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-
- <%#= f.input :avatar, label: false, input_html: { class: "coucou" } %>
-<%= f.input :avatar, :input_html => {:preview_version => :thumb} %>
-    <%#= f.input :avatar, label: false do %>
-<!-- <input class="form-control-file file required d-none" type="file" name="user[avatar]" id="user_avatar"> -->
-     <!-- <img src="https://img.icons8.com/cotton/100/000000/gender-neutral-user.png" class = "avatar-signup"> -->
-    <%# end %>
+      <div class="input-avatar">
+        <%= f.input :avatar, label: false, input_html: { class: "image-loader" }%>
+        <img id="avatar" src="#" alt="your image" />
+        <div class="coucou"></div>
+      </div>
     <%= f.input :nickname, label: false, :placeholder => 'Surnom'%>
     <%= f.input :first_name, label: false, :placeholder => 'Prénom'%>
     <%= f.input :last_name, label: false, :placeholder => 'Nom'%>
@@ -33,11 +31,3 @@
 <% end %>
 <%=  %>
 <%= render "devise/shared/links" %>
-<style>
-  .coucou {
-     background-image:url('https://img.icons8.com/cotton/100/000000/gender-neutral-user.png');
-     background-repeat:no-repeat;
-     height: 100px;
-     color: transparent;
-  }
-</style>
