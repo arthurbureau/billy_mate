@@ -4,13 +4,17 @@
 (liste des bills)
 <ul>
   <% @bills&.each do |bill| %>
-    <li><%= bill.category %>  %>
+    <li><%= bill.category %>
       <% bill.flat.users.each do |user| %>
-        - <%= user.first_name %>
-        <%= link_to "rembourser", bill_path(bill, user: user) %>
+        <%= link_to bill_path(bill, user: user) do %>
+          <%= image_tag "#{user.avatar}", class: "avatar" %>
+        <% end %>
+
+
       <% end %>
     </li>
   <% end %>
 </ul>
-
-  <%= link_to "ajouter une facture", categories_path, class: "btn btn-primary btn-lg"%>
+<div class="d-flex justify-content-center">
+  <%= link_to "ajouter une facture", categories_path, class: "middlebutton"%>
+</div>
