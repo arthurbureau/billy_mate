@@ -12,5 +12,5 @@ class Bill < ApplicationRecord
   validates :amount_cents, presence: true
   validates :payment_date, presence: true
   validates :user_id, presence: true
-
+  # validates :category, uniqueness: { scope: :user, message: "should happen once per year" }
 end
