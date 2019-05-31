@@ -2,13 +2,19 @@
 
 <% if user_signed_in? %>
 
+<div class="choice-container">
 
+ <p>Je créé une coloc'</p>
+ <br>
+  <%= link_to "c'est parti!", new_flat_path, class: "bigbutton"%>
+  <br>
+  <br>
+  <br>
+  <p>Je rejoins une coloc'</p>
+  <br>
+  <%= link_to "Rejoindre un appart", join_flat_path, class: "bigbutton"%>
 
-  Je créé une coloc
-  <%= link_to "c'est parti!", new_flat_path, class: "btn btn-primary btn-lg"%>
-
-  Je rejoins une coloc
-  <%= link_to "Rejoindre un appart", join_flat_path, class: "btn btn-primary btn-lg"%>
+</div>
 
 <% else %>
 
