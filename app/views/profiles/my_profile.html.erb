@@ -1,9 +1,9 @@
 <div class="container">
 
 <div class="my_profil_set" >
-  
+
 <h1>Hello <%= current_user.first_name %></h1>
-  
+
 <h4> Mes factures </h4>
   <% @bills.each do |bill| %>
 
@@ -18,11 +18,8 @@
         <i class="fas fa-trash-alt" ></i>
       <% end %>
     </div>
-
-    <%= link_to "Ajouter une facture", new_bill_path, class: "middlebutton" %>
-
   <% end %>
-
+  <%= link_to "Ajouter une facture", new_bill_path, class: "middlebutton" %>
 
   <h4> Mes échéances </h4>
 
@@ -32,6 +29,9 @@
 <div class="d-flex w-100 justify-content-between mb-4">
   <div>
      <%= current_user.flat.name %>
+     <div class="fake-input">
+      <p><%= current_user.flat.token %></p>
+     </div>
   </div>
       <%= link_to edit_flat_path(current_user.flat), class: "edited-bill" do%>
         <i class="far fa-edit card-text"></i>

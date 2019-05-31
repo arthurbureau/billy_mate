@@ -1,5 +1,4 @@
 .middlebutton {
-  margin-left:  50px;
   padding: 10px 50px 10px 50px;
   background: #006378;
   border-radius: 8px;
@@ -10,7 +9,13 @@
 .bigbutton {
   background: #006378;
   text-align: center;
-  font-color: white;
+  color: white;
+}
+
+.bigbutton > input {
+  background: #006378;
+  text-align: center;
+  color: white;
 }
 
 .smallbutton {
