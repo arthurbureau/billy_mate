@@ -1,22 +1,18 @@
-<h1>Bills#edit</h1>
-<p>Find me in app/views/bills/edit.html.erb</p>
-
-
 <div class="container">
 
   <h2>Mettre à jour la facture</h2>
 
   <%= simple_form_for @bill do |f| %>
 
-    <%= f.input :category, collection: Bill::CATEGORY %>
-    <%= f.input :provider %>
-    <%= f.input :amount %>
-    <%= f.input :payment_date %>
-    <%= f.input :user, collection: current_user.flat.users, :label_method => lambda { |user| user.first_name } %>
-    <%= f.input :contract_picture %>
+    <%= f.input :category, label: 'Catégorie', collection: Bill::CATEGORY %>
+    <%= f.input :provider, label: 'Founisseur' %>
+    <%= f.input :amount, label: 'Montant (€)' %>
+    <%= f.input :payment_date, label: 'Date de prélèvement' %>
+    <%= f.input :user, label: 'Qui est prélevé?', collection: current_user.flat.users, :label_method => lambda { |user| user.first_name } %>
+    <%= f.input :contract_picture, label: 'Télécharger le contrat' %>
     <%= f.input :contract_picture, as: :hidden %>
 
-    <%= f.button :submit, "Mettre à jour", class: "btn btn-success btn-lg btn-block"%>
+    <%= f.button :submit, "Mettre à jour", class: "bigbutton"%>
   <% end %>
 
 </div>
