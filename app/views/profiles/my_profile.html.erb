@@ -19,9 +19,9 @@
       <% end %>
     </div>
 
-    <%= link_to "Ajouter une facture", new_bill_path, class: "middlebutton" %>
-
   <% end %>
+
+  <%= link_to "Ajouter une facture", new_bill_path, class: "middlebutton" %>
 
 
   <h4> Mes échéances </h4>
@@ -33,9 +33,16 @@
   <div>
      <%= current_user.flat.name %>
   </div>
+
       <%= link_to edit_flat_path(current_user.flat), class: "edited-bill" do%>
         <i class="far fa-edit card-text"></i>
       <% end %>
         <i class="fas fa-trash-alt" ></i>
+
+
 </div>
+
+ <div class="fake-input">
+      <p><%= current_user.flat.token %></p>
+     </div>
 

@@ -1,26 +1,28 @@
 
-<div class="container">
+<div class="container my-3">
   <% if @category.present? %>
     <h1><%= @category %></h1>
   <% else %>
     <h1>Ajouter une facture</h1>
   <% end %>
-</div>
+
 
   <%= simple_form_for [@bill] do |f| %>
     <% if @category.present? %>
       <%= f.input :category, input_html: { value: @category }, as: :hidden %>
     <% else %>
-      <%= f.input :category, collection: Bill::CATEGORY %>
+      <%= f.input :category, label: 'Catégorie', collection: Bill::CATEGORY %>
     <% end %>
-    <%= f.input :provider %>
-    <%= f.input :amount %>
-    <%= f.input :payment_date %>
-    <%= f.input :user, collection: current_user.flat.users, :label_method => lambda { |user| user.first_name } %>
-    <%= f.input :contract_picture %>
+    <%= f.input :provider, label: 'Fournisseur' %>
+    <%= f.input :amount, label: 'Montant' %>
+    <%= f.input :payment_date, label: 'Date de prélèvement' %>
+    <%= f.input :user, label: 'Qui est prélevé ?', collection: current_user.flat.users, :label_method => lambda { |user| user.first_name } %>
+    <%= f.input :contract_picture, label: 'Ajouter le contrat' %>
     <%= f.input :contract_picture, as: :hidden %>
 
-    <div class="bigbutton">
-      <%= f.button :submit, "Ajouter", class: "btn-lg btn-block" %>
+    <div class="d-flex justify-content-center fixed-bottom">
+      <%= f.button :submit, "Ajouter", class: "bigbutton" %>
     </div>
+
   <% end %>
+</div>
