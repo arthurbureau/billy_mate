@@ -1,19 +1,24 @@
-<h1> Dashboard </h1>
+<div class="container py-3">
+  <h1> Dashboard </h1>
 
-(liste des bills)
-<ul>
-  <% @bills&.each do |bill| %>
-    <li><%= bill.category %>
-      <% bill.flat.users.each do |user| %>
-        <%= link_to bill_path(bill, user: user) do %>
-          <%= image_tag "#{user.avatar}", class: "avatar" %>
+
+    <% @bills&.each do |bill| %>
+      <div class="row my-3">
+        <div class="col-4 d-flex align-items-center">
+          <h3><%= bill.category %></h3>
+        </div>
+
+        <div class="col-8 d-flex justify-content-around align-items-center" >
+        <% bill.flat.users.each do |user| %>
+            <%= link_to bill_path(bill, user: user) do %>
+              <%= image_tag "#{user.avatar}", class: "avatar" %>
+            <% end %>
         <% end %>
+        </div>
+     </div>
+    <% end %>
 
-
-      <% end %>
-    </li>
-  <% end %>
-</ul>
-<div class="d-flex justify-content-center">
-  <%= link_to "ajouter une facture", categories_path, class: "middlebutton"%>
+  <div class="d-flex justify-content-center fixed-bottom">
+    <%= link_to "Ajouter une facture", categories_path, class: "bigbutton"%>
+  </div>
 </div>

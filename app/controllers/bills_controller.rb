@@ -1,13 +1,11 @@
 class BillsController < ApplicationController
   def display_categories
     @bills = current_user.flat.bills
+    @flat = current_user.flat
+    @bill_gaz_present = Bill.find_by(flat: @flat, category: 'Gaz').present?
+    @bill_internet_present = Bill.find_by(flat: @flat, category: 'Internet').present?
+    @bill_elec_present = Bill.find_by(flat: @flat, category: 'Electricité').present?
   end
-
-  # def category_exist?(category)
-  #   current_user.flat.bills.each do |bill_de_lappart|
-  #     bill_de_lappart.category == category
-  #   end
-  # end
 
   def index
     redirect_to root_path unless current_user.flat
@@ -18,8 +16,14 @@ class BillsController < ApplicationController
     if params[:user].present?
       @user = User.find(params[:user])
       @bill = Bill.find(params[:id])
-      @transaction = Transaction.new(bill: @bill, user: @user)
-      @user_already_paid = Transaction.find_by(user: @user, bill: @bill).present?
+
+      if @bill.user == @user
+        flash[:alert] = "Tu ne peux pas te rembourser toi-même"
+        redirect_to bills_path
+      else
+        @transaction = Transaction.new(bill: @bill, user: @user)
+        @user_already_paid = Transaction.find_by(user: @user, bill: @bill).present?
+      end
     else
       redirect_to bills_path
     end
