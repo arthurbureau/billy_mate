@@ -4,9 +4,9 @@ class TransactionsController < ApplicationController
 
     if @transaction.save
       flash[:notice] = "Ton remboursement a été validé!"
-      redirect_to bill_path(@transaction.bill, user: @transaction.user)
+      redirect_to bills_path
     else
-      redirect_to bill_path(@transaction.bill)
+      redirect_to bills_path
 
     end
   end

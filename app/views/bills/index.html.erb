@@ -9,10 +9,15 @@
 
         <div class="col-8 d-flex justify-content-around align-items-center" >
         <% bill.flat.users.each do |user| %>
-            <%= link_to bill_path(bill, user: user) do %>
-              <%= image_tag "#{user.avatar}", class: "avatar" %>
+            <% if Transaction.find_by(user: user , bill: bill ) || bill.user == user %>
+                <%= image_tag "#{user.avatar}", class: "avatar-green" %>
+            <% else %>
+                <%= link_to bill_path(bill, user: user) do %>
+                <%= image_tag "#{user.avatar}", class: "avatar" %>
+                <% end %>
             <% end %>
-        <% end %>
+          <% end %>
+
         </div>
      </div>
     <% end %>
