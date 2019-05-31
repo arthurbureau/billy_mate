@@ -5,6 +5,7 @@
   <% else %>
     <h1>Ajouter une facture</h1>
   <% end %>
+</div>
 
   <%= simple_form_for [@bill] do |f| %>
     <% if @category.present? %>
@@ -19,6 +20,7 @@
     <%= f.input :contract_picture %>
     <%= f.input :contract_picture, as: :hidden %>
 
-    <%= f.button :submit, "Ajouter", class: "btn btn-success btn-lg btn-block" %>
+    <div class="bigbutton">
+      <%= f.button :submit, "Ajouter", class: "btn-lg btn-block" %>
+    </div>
   <% end %>
-</div>
