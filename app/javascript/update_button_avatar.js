@@ -1,19 +1,20 @@
-//
-// //aller chercher le boutton "choisir un fichier avec l'id"
-// const picture = document.getElementbyId("user_avatar")
-// // if le boutton est présent
-// if
-// // rajoute un id a l'image
+document.getElementById('user_avatar').addEventListener('change',
+  function readURL(input) {
+    // debugger
+    if (input.target.files && input.target.files[0]) {
 
-// // chercher l'image avec l'id
+        var reader = new FileReader();
 
-// // ajouter un listener sur le click
+        reader.onload = function (e) {
+            $('#avatar')
+                .attr('src', e.target.result)
+                .width(100)
+                .height(100)
+                .show()
+        };
 
-// // déclancher le click sur le 1er bouton
-// picture.addEventListener("click", (event) => {
-//   console.log(event);
-// }
-// // exporter la méthode et l'importer dans application.js
-
-// export "";
-
+        reader.readAsDataURL(input.target.files[0]);
+            $('.coucou').hide()
+    }
+  }
+);

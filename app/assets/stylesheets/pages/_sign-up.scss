@@ -1,6 +1,41 @@
-.avatar-signup {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 5px;
+
+.coucou {
+  position: absolute;
+  background-image:url('https://img.icons8.com/cotton/100/000000/gender-neutral-user.png');
+  background-repeat:no-repeat;
+  height: 100px;
+  color: transparent;
+  width: 100%;
+  top: 30px;
+  bottom: 50px;
+  left: 37%;
+  z-index: 2;
+}
+
+.input-avatar {
+  position: relative;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#avatar {
+  position: absolute;
+  top: 30px;
+  bottom: 50px;
+  left: 37%;
+  display: none;
+  z-index: 2;
+}
+
+.image-loader {
+  opacity: 0;
+}
+
+.user_avatar {
+  z-index: 3;
+  max-width: 20%;
+  height: 50%;
+  margin: 0;
 }
