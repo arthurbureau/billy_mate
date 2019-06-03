@@ -9,7 +9,12 @@ class BillsController < ApplicationController
 
   def index
     redirect_to root_path unless current_user.flat
-    @bills = current_user.flat&.bills
+    if params[:query_month].present?
+      @month = params[:query_month].to_i
+    else
+      @month = DateTime.now.month
+    end
+    @bills = current_user.flat.bills.select { |bill| bill.payment_date.month == @month }
   end
 
   def show
@@ -42,7 +47,16 @@ class BillsController < ApplicationController
     @bill = Bill.new(set_bill_params)
     @bill.flat = current_user.flat
     @bill.user = user_payeur
-    if @bill.save
+
+    futur_bills = []
+
+    10.times do |i|
+      new_bill = @bill.dup
+      new_bill.payment_date += i.month
+      futur_bills << new_bill
+    end
+
+    if futur_bills.each(&:save!)
       flash[:notice] = "Yay! 🎉 tu as ajouté une nouvelle facture."
       redirect_to categories_path
     else
