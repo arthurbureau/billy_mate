@@ -1,4 +1,8 @@
-<h1><%= @bill.category %> payé par <%= @bill.user.first_name %> - <%= humanized_money_with_symbol(@bill.amount) %></h1>
+<div class="container">
+<h2>Remboursement</h2>
+<br>
+<h3>La facture "<%= @bill.category %>" est payée par <%= @bill.user.first_name %></h3>
+<h3>Le montant total est de <%= @bill.amount %> €</h3>
 
 
 <% @bill.transactions.each do |transaction| %>
@@ -14,7 +18,9 @@
     <%= f.association :user, as: :hidden %>
     <%= f.association :bill, as: :hidden %>
 
-    <%= f.button :submit, "Rembourser #{@transaction.amount}", class: "bigbutton btn-lg btn-block" %>
+    <%= f.button :submit, "Rembourser #{@transaction.amount} €", class: "bigbutton btn-lg btn-block" %>
   <% end %>
 
 <% end %>
+
+</div>
