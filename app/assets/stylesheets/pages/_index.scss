@@ -10,3 +10,28 @@ a {
   text-decoration: none
 }
 
+.monthly-bill {
+  display: flex;
+  height: 50px;
+  justify-content: space-around;
+  align-items: center;
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+ }
+
+
+#arrow-last {
+  height: 20px;
+  i {
+   font-size: 20px;
+ }
+}
+
+#arrow-next {
+  height: 20px;
+  i {
+  font-size: 20px;
+ }
+}
