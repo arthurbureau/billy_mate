@@ -1,3 +1,5 @@
+<div class="container">
+
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
@@ -7,6 +9,7 @@
         <img id="avatar" src="#" alt="your image" />
         <div class="coucou"></div>
       </div>
+      <br>
     <%= f.input :nickname, label: false, :placeholder => 'Surnom'%>
     <%= f.input :first_name, label: false, :placeholder => 'Prénom'%>
     <%= f.input :last_name, label: false, :placeholder => 'Nom'%>
@@ -31,3 +34,5 @@
 <% end %>
 <%=  %>
 <%= render "devise/shared/links" %>
+
+</div>

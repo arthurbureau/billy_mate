@@ -1,33 +1,33 @@
 <div class="container">
 
-  <h1>Choisis une categorie</h1>
+  <h2>Choisis une categorie</h2>
 
   <div class="my-3">
     <% if @bill_gaz_present %>
-      <%= link_to "Gaz", new_bill_path(category: 'Gaz'),  class: "btn btn-success btn-lg disabled btn-block" %>
+      <%= link_to "Gaz", new_bill_path(category: 'Gaz'),  class: "btn btn-secondary btn-lg disabled btn-block" %>
     <% else %>
-      <%= link_to "Gaz", new_bill_path(category: 'Gaz'),  class: "btn btn-primary btn-block btn-lg" %>
+      <%= link_to "Gaz", new_bill_path(category: 'Gaz'),  class: "bigbutton btn-block btn-lg" %>
     <% end %>
   </div>
 
   <div class="my-3">
     <% if @bill_elec_present %>
-      <%= link_to "Electricité", new_bill_path(category: 'Gaz'),  class: "btn btn-success btn-lg btn-block disabled" %>
+      <%= link_to "Electricité", new_bill_path(category: 'Gaz'),  class: "btn btn-secondary btn-lg btn-block disabled" %>
     <% else %>
-      <%= link_to "Electricité", new_bill_path(category: 'Electricité'),  class: "btn btn-primary btn-lg btn-block" %>
+      <%= link_to "Electricité", new_bill_path(category: 'Electricité'),  class: "bigbutton btn-lg btn-block" %>
     <% end %>
   </div>
 
   <div class="my-3">
     <% if @bill_internet_present %>
-      <%= link_to "Internet", new_bill_path(category: 'Gaz'),  class: "btn btn-success btn-lg btn-block disabled" %>
+      <%= link_to "Internet", new_bill_path(category: 'Gaz'),  class: "btn btn-secondary btn-lg btn-block disabled" %>
     <% else %>
-      <%= link_to "Internet", new_bill_path(category: 'Internet'),  class: "btn btn-primary btn-lg btn-block" %>
+      <%= link_to "Internet", new_bill_path(category: 'Internet'),  class: "bigbutton btn-lg btn-block" %>
     <% end %>
   </div>
 
   <div class="my-3">
-    <%= link_to "Autre", new_bill_path,  class: "btn btn-primary btn-lg btn-block" %>
+    <%= link_to "Autre", new_bill_path,  class: "bigbutton btn-lg btn-block" %>
   </div>
 
   <div class="my-3">
