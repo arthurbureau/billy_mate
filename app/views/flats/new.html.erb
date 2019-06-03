@@ -1,9 +1,12 @@
 <div class="container">
-  <h2>Crée ta coloc!</h2>
 
-  <%= simple_form_for @flat do |f| %>
-    <%= f.input :name %>
-
-    <%= f.button :submit, "Crée ta coloc!", class: "btn btn-primary btn-lg btn-block"%>
+  <h2 class="my-3">Crée ta coloc!</h2>
+  <br>
+  <br>
+    <%= simple_form_for @flat do |f| %>
+    <%= f.input :name, label: false, :placeholder => 'Nom de la colocation'%>
+  <br>
+    <%= f.button :submit, "Crée ta coloc!", class: "bigbutton btn-lg btn-block"%>
   <% end %>
+
 </div>
