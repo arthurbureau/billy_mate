@@ -1,19 +1,46 @@
 <div class="container py-3">
   <h2> Mon tableau de bord </h2>
 
-    <% @bills&.each do |bill| %>
+
+<%= form_tag bills_path, method: :get do %>
+  <%= text_field_tag :query_month,
+    params[:query_month],
+    class: "form-control",
+    placeholder: "Donne un mois en chiffre"
+  %>
+<% end %>
+
+
+  <h2> <%= @month %></h2>
+
       <div class="row my-3">
         <div class="col-4 d-flex align-items-center">
-          <h3><%= bill.category %></h3>
+        </div>
+        <div class="col-8 d-flex justify-content-around align-items-center">
+          <% current_user.flat.users.each do |user| %>
+                <div class="text-center">
+                  <%= image_tag "#{user.avatar}", class: "avatar" %>
+                </div>
+          <% end %>
+        </div>
+      </div>
+
+    <% @bills.each do |bill| %>
+
+      <div class="row my-3">
+        <div class="col-4 d-flex align-items-center">
+          <h3><%= bill.category %> <%= bill.payment_date %></h3>
         </div>
 
         <div class="col-8 d-flex justify-content-around align-items-center" >
         <% bill.flat.users.each do |user| %>
-            <% if Transaction.find_by(user: user , bill: bill ) || bill.user == user %>
-                <%= image_tag "#{user.avatar}", class: "avatar-green" %>
+            <% if Transaction.find_by(user: user , bill: bill ) %>
+                <%= image_tag "https://res.cloudinary.com/dzh1pkhi5/image/upload/v1559554711/checked_rg1rin.png", class: "avatar" %>
+            <% elsif bill.user == user %>
+                <%= image_tag "https://res.cloudinary.com/dzh1pkhi5/image/upload/v1559557512/paid_owner_jdrnxh.png", class: "avatar-payer" %>
             <% else %>
                 <%= link_to bill_path(bill, user: user) do %>
-                <%= image_tag "#{user.avatar}", class: "avatar" %>
+                <%= image_tag "https://res.cloudinary.com/dzh1pkhi5/image/upload/v1559554711/refund_usrw1c.png", class: "avatar" %>
                 <% end %>
             <% end %>
           <% end %>
