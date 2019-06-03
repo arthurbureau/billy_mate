@@ -17,7 +17,7 @@
           <%= image_tag "#{current_user.avatar}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Mon Profil", profile_path, class: "dropdown-item" %>
-            <%= link_to "Page d'accueil", root_path, class: "dropdown-item" %>
+            <%= link_to "Tableau de bord", root_path, class: "dropdown-item" %>
             <%= link_to "Ajouter une facture", new_bill_path, class: "dropdown-item" %>
             <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
