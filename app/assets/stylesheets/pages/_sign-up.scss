@@ -1,20 +1,24 @@
 
 .coucou {
   position: absolute;
-  background-image:url('https://img.icons8.com/cotton/100/000000/gender-neutral-user.png');
+  background-image:url('user.png');
   background-repeat:no-repeat;
-  height: 100px;
-  color: transparent;
+  height: 142px;
   width: 100%;
-  top: 30px;
+  color: transparent;
+  top: 21px;
   bottom: 50px;
-  left: 37%;
+  left: 33%;
   z-index: 2;
+  // &:hover {
+  //   background-image:url('https://img.icons8.com/cotton/100/000000/gender-neutral-user.png');
+  //   width: 120%;
+  // }
 }
 
 .input-avatar {
   position: relative;
-  height: 150px;
+  height: 140px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,4 +42,10 @@
   max-width: 20%;
   height: 50%;
   margin: 0;
+}
+
+#texte {
+  position: absolute;
+  bottom: -20px;
+  font-size: 12px;
 }
