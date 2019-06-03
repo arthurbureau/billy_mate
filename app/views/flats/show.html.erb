@@ -1,7 +1,9 @@
-<h1>Embarque dans la coloc</h1>
+<div class="container">
 
+  <h2 class="my-3">Embarque dans la coloc!</h2>
+  <% raise %>
+    <%= simple_form_for [@flat, current_user], method: :patch do |f| %>
+      <%= f.button :submit, "Rejoindre la coloc", class: "bigbutton btn-lg btn-block" %>
+    <% end %>
 
-<% raise %>
-  <%= simple_form_for [@flat, current_user], method: :patch do |f| %>
-    <%= f.button :submit, "Rejoindre la coloc", class: "btn btn-success btn-lg btn-block" %>
-  <% end %>
+</div>
