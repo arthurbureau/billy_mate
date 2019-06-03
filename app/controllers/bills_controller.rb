@@ -15,6 +15,7 @@ class BillsController < ApplicationController
       @month = DateTime.now.month
     end
     @bills = current_user.flat.bills.select { |bill| bill.payment_date.month == @month }
+    @bills_carousel = Bill.all.group_by { |bill| bill.payment_date.month }
   end
 
   def show

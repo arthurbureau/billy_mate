@@ -10,3 +10,27 @@ a {
   text-decoration: none
 }
 
+
+
+// CARROUSEL
+
+.carousel-inner {
+  position: none
+}
+
+.arrow-carousel {
+  height: 40px;
+  position: relative;
+
+}
+.carousel-control-prev > i {
+  color: black !important;
+}
+
+.carousel-control-next > i {
+  color: black !important;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  height: 20% !important;
+}
