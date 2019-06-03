@@ -22,32 +22,69 @@
 
   <div class="container">
 
-  <!--  <div class="title-Billy-Mate">
-  <%= link_to root_path do %>
-    <%= image_tag "https://res.cloudinary.com/dzh1pkhi5/image/upload/v1559209857/logoBillyMate_zq9mgn.png", class: "logo-size"%>
-  <% end %>
-    <h1 class="title-align-right">Billy-mate</h1>
-    </div> -->
-
     <div class="home-welcome">
-      <h2>Bienvenue Colocataire!</h2>
-      <h3>Mon meilleur souvenir d'enfance, ne pas payer de factures .. Depuis j'ai grandi !</h3>
+      <h2>Bienvenue Coloc!</h2>
+      <h3>Billy-mate est ton nouveau partenaire pour gérer sereinement les factures de la colocation!</h3>
     </div>
 
     <div class="home-card">
-      <img class="img-coloc-home" src="https://welikeit.fr/wp-content/uploads/2014/12/espace-vie-coloc-vie-seul.jpg" alt="image colocataires">
+      <img class="img-coloc-home" src="https://res.cloudinary.com/dzh1pkhi5/image/upload/v1559550874/undraw_mobile_testing_reah_fbqhz3.svg" alt="image colocataires">
+      <h3>Profite alors de cette super expérience qu'est la vie en communauté!</h3>
     </div>
 
-    <div>
-       <h3>Cette application te permettra à toi et aux autres colocataires de suivre en temps réel tes factures à payer et celles déja soldées.</h3>
-    </div>
     <div class="button-align-end d-flex justify-content-center">
-      <%= link_to "C'EST PARTI !", new_user_registration_path, class: "middlebutton"%>
+      <%= link_to "C'est parti !", new_user_registration_path, class: "middlebutton"%>
+    </div>
+
+     <div class="roomate-rules w-100 text-center">
+      <!-- <p>See the list</p> -->
+      <a href="#roomate-rules"><i class="chevron fas fa-2x fa-chevron-down pulse"></i></a>
+    </div>
+
+
+  <div id="roomate-rules" class="container">
+    <br>
+    <br>
+    <br>
+    <div class="home-card">
+       <h2>Les règles d'or de la coloc'.</h2>
+    </div>
+
+
+    <div class="home-card">
+      <img class="img-coloc-home" src="https://res.cloudinary.com/dzh1pkhi5/image/upload/v1559549937/undraw_may_the_force_bgdm_rsqrl7.svg" alt="may-the-forth">
+       <h3>Règle n°1</h3>
+       <p>Ne pas se disputer pour des histoires d'argent.</p>
+    </div>
+
+    <div class="home-card">
+      <img class="img-coloc-home" src="https://res.cloudinary.com/dzh1pkhi5/image/upload/v1559549946/undraw_following_q0cr_1_dolirq.svg" alt="transfer-money">
+      <h3>Règle n°2</h3>
+      <p>Vérifier le tableau de suivi des factures chaque mois.</p>
+    </div>
+
+    <div class="home-card">
+      <img class="img-coloc-home" src="https://res.cloudinary.com/dzh1pkhi5/image/upload/v1559549937/undraw_transfer_money_rywa_jkdijn.svg" alt="transfer-money">
+      <h3>Règle n°3</h3>
+      <p>Payer ses factures en temps et en heure dès réception de la notification Lydia.</p>
+    </div>
+
+    <div class="home-card">
+      <img class="img-coloc-home" src="https://res.cloudinary.com/dzh1pkhi5/image/upload/v1559549937/undraw_having_fun_iais_1_iw9uys.svg" alt="transfer-money">
+      <h3>Règle n°4</h3>
+      <p>Profiter de l'essentiel : partager les meilleurs moments entre nous !</p>
+      <br>
+    </div>
+
+    <div class="button-align-end d-flex justify-content-center">
+      <%= link_to "C'est parti !", new_user_registration_path, class: "middlebutton"%>
     </div>
 
   </div>
-
-
+  </div>
 
 <% end %>
+
+
+
 

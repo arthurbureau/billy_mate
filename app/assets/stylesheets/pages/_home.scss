@@ -31,22 +31,34 @@ h2 {
   text-align: center;
   font-family: 'Pacifico', cursive;
   font-weight: bold;
-  padding-top: 30px;
+  padding-top: 16px;
+  color: #333745;
 
 }
 
 h3 {
   padding-top: 15px;
-  padding-bottom: 10px;
+  // padding-bottom: 10px;
   font-size: 18px;
   text-align: center;
-  font-family: 'Montaga', serif;
+  font-family: 'Roboto', sans-serif;
+  color: #333745;
+  font-weight: bold;
+}
+
+p {
+  // padding-top: 15px;
+  // padding-bottom: 10px;
+  font-size: 16px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: #b1bcc9;
 }
 
 .button-align-end {
   margin: 20px;
   padding: 10px;
-  font-family: 'Montaga', serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .home-card img{
@@ -56,6 +68,7 @@ h3 {
   border-radius: 5px;
 }
 
-
-
+.chevron {
+  color:#333745;
+}
 
