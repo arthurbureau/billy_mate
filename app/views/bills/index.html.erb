@@ -9,35 +9,14 @@
     placeholder: "Donne un mois en chiffre"
   %>
 <% end %>
-<br>
 
 
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <% @months.each do |month| %>
-      <div class="carousel-item active">
-       <!--  <img class="d-block w-100" src="..." alt="First slide"> -->
-        <h1><%= month %></h1>
-      </div>
-    <% end %>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+  <h2> <%= @month_name %></h2>
 
-
-
- <h2> <%= @month_name %></h2>
        <div class="row my-3">
-        <div class="col-4 d-flex align-items-center">
+        <div class="col-3 d-flex align-items-center">
         </div>
-        <div class="col-8 d-flex justify-content-around align-items-center">
+        <div class="col-9 d-flex justify-content-around align-items-center">
           <% current_user.flat.users.each do |user| %>
                 <div class="text-center">
                   <%= image_tag "#{user.avatar}", class: "avatar" %>
@@ -51,11 +30,11 @@
     <% @bills.each do |bill| %>
 
       <div class="row my-3">
-        <div class="col-4 d-flex align-items-center">
+        <div class="col-3 d-flex align-items-center">
           <h4><%= bill.category %></h4>
         </div>
 
-        <div class="col-8 d-flex justify-content-around align-items-center" >
+        <div class="col-9 d-flex justify-content-around align-items-center" >
         <% bill.flat.users.each do |user| %>
             <% if Transaction.find_by(user: user , bill: bill ) %>
                 <%= image_tag "https://res.cloudinary.com/dzh1pkhi5/image/upload/v1559554711/checked_rg1rin.png", class: "avatar" %>
@@ -71,11 +50,6 @@
         </div>
      </div>
     <% end %>
-
-
-
-
-
 
 
   <div class="d-flex justify-content-center fixed-bottom">
