@@ -20,7 +20,8 @@ class BillsController < ApplicationController
       @month_name = DateTime.now.strftime('%B')
     end
     @bills = current_user.flat.bills.select { |bill| bill.payment_date.month == @month }
-    @months = Bill.all.group_by{|bill| bill.payment_date.month}.keys
+    @bills_carousel = Bill.all.group_by { |bill| bill.payment_date.month }
+
   end
 
   def show
