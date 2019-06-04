@@ -23,8 +23,8 @@
         <%= simple_form_for [@bill, @transaction] do |f| %>
           <%= f.association :user, as: :hidden %>
           <%= f.association :bill, as: :hidden %>
-
-          <%= f.button :submit, "Rembourser #{@transaction.amount} €", class: "bigbutton btn-lg btn-block" %>
+          <%= image_tag "#{@user.avatar}", class: "avatar-center" %>
+          <%= f.button :submit, "rembourse #{@transaction.amount} €", class: "bigbutton btn-lg btn-block" %>
         <% end %>
       <% end %>
 
