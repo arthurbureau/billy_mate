@@ -1,14 +1,14 @@
 <div class="container py-3">
-  <h2> Mon tableau de bord </h2>
+  <h2 class="my-3"> Mon tableau de bord </h2>
 
 
-<%= form_tag bills_path, method: :get do %>
-  <%= text_field_tag :query_month,
+<%#= form_tag bills_path, method: :get do %>
+  <%#= text_field_tag :query_month,
     params[:query_month],
     class: "form-control",
     placeholder: "Donne un mois en chiffre"
   %>
-<% end %>
+<%# end %>
 
 
 
@@ -77,7 +77,7 @@
 
 
 
-
+<!--
 
   <h2> <%= @month %></h2>
 
@@ -116,7 +116,7 @@
         </div>
      </div>
     <% end %>
-
+ -->
   <div class="d-flex justify-content-center fixed-bottom">
     <%= link_to "Ajouter une facture", categories_path, class: "bigbutton"%>
   </div>
