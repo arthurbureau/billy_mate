@@ -1,28 +1,34 @@
+<div class="image-background-refund">
+<br>
+  <div class="container">
+    <div class="refund-form">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-6">
 
-<div class="container my-3">
-  <% if @category.present? %>
-    <h2><%= @category %></h2>
-  <% else %>
-    <h2>Ajouter une facture</h2>
-  <% end %>
+        <% if @category.present? %>
+          <h2><%= @category %></h2>
+        <% else %>
+          <h2>Ajouter une facture</h2>
+        <% end %>
 
+        <%= simple_form_for [@bill] do |f| %>
+          <% if @category.present? %>
+            <%= f.input :category, input_html: { value: @category }, as: :hidden %>
+          <% else %>
+            <%= f.input :category, label: 'Catégorie', collection: Bill::CATEGORY %>
+          <% end %>
+          <%= f.input :provider, label: 'Fournisseur' %>
+          <%= f.input :amount, label: 'Montant' %>
+          <%= f.input :payment_date, label: 'Date de prélèvement' %>
+          <%= f.input :user, label: 'Qui est prélevé ?', collection: current_user.flat.users, :label_method => lambda { |user| user.first_name } %>
+          <%= f.input :contract_picture, label: 'Ajouter le contrat' %>
+          <%= f.input :contract_picture, as: :hidden %>
 
-  <%= simple_form_for [@bill] do |f| %>
-    <% if @category.present? %>
-      <%= f.input :category, input_html: { value: @category }, as: :hidden %>
-    <% else %>
-      <%= f.input :category, label: 'Catégorie', collection: Bill::CATEGORY %>
-    <% end %>
-    <%= f.input :provider, label: 'Fournisseur' %>
-    <%= f.input :amount, label: 'Montant' %>
-    <%= f.input :payment_date, label: 'Date de prélèvement' %>
-    <%= f.input :user, label: 'Qui est prélevé ?', collection: current_user.flat.users, :label_method => lambda { |user| user.first_name } %>
-    <%= f.input :contract_picture, label: 'Ajouter le contrat' %>
-    <%= f.input :contract_picture, as: :hidden %>
+          <%= f.button :submit, "Ajouter", class: "bigbutton" %>
+          <% end %>
 
-    <div class="d-flex justify-content-center fixed-bottom">
-      <%= f.button :submit, "Ajouter", class: "bigbutton" %>
+        </div>
+      </div>
     </div>
-
-  <% end %>
+  </div>
 </div>

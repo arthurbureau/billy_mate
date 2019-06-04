@@ -1,26 +1,37 @@
-<div class="container">
-<h2>Remboursement</h2>
-<br>
-<h3>La facture "<%= @bill.category %>" est payée par <%= @bill.user.first_name %></h3>
-<h3>Le montant total est de <%= @bill.amount %> €</h3>
+<div class="image-background-refund">
+  <br>
+  <br>
+  <div class="container">
+    <div class="refund-form">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-6">
+
+      <h2>Remboursement</h2>
+      <h4>La facture "<%= @bill.category %>" est prélevée sur le compte bancaire de <%= @bill.user.first_name %></h4>
+      <p>Le montant total est de <%= @bill.amount %> €</p>
+
+      <img src="https://res.cloudinary.com/dzh1pkhi5/image/upload/v1559638026/undraw_wallet_aym5_cialio.svg" alt="payment-wallet" id="refund-payment">
+      <br>
+
+      <% @bill.transactions.each do |transaction| %>
 
 
-<% @bill.transactions.each do |transaction| %>
-<p>
-<%= transaction.user.first_name %> a remboursé <%= transaction.amount %> le <%= transaction.payment_date %>
-</p>
-<% end %>
+        <p>
+      <%= transaction.user.nickname %> a déjà remboursé <%= transaction.amount %> € le <%= transaction.payment_date %>
+      </p>
+      <% end %>
+      <% unless @user_already_paid %>
+        <p> </p>
+        <%= simple_form_for [@bill, @transaction] do |f| %>
+          <%= f.association :user, as: :hidden %>
+          <%= f.association :bill, as: :hidden %>
+          <%= image_tag "#{@user.avatar}", class: "avatar-center" %>
+          <%= f.button :submit, "rembourse #{@transaction.amount} €", class: "bigbutton btn-lg btn-block" %>
+        <% end %>
+      <% end %>
 
-<% unless @user_already_paid %>
-
-  <p> </p>
-  <%= simple_form_for [@bill, @transaction] do |f| %>
-    <%= f.association :user, as: :hidden %>
-    <%= f.association :bill, as: :hidden %>
-
-    <%= f.button :submit, "Rembourser #{@transaction.amount} €", class: "bigbutton btn-lg btn-block" %>
-  <% end %>
-
-<% end %>
-
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

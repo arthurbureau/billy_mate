@@ -1,18 +1,24 @@
-<div class="container">
+<div class="image-background-refund">
+  <div class="container">
+    <div class="refund-form">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-6">
 
-  <h2>Mettre à jour la facture</h2>
+          <h2>Mise à jour de la facture</h2>
 
-  <%= simple_form_for @bill do |f| %>
+          <%= simple_form_for @bill do |f| %>
+            <%= f.input :category, label: 'Catégorie', collection: Bill::CATEGORY %>
+            <%= f.input :provider, label: 'Founisseur' %>
+            <%= f.input :amount, label: 'Montant (€)' %>
+            <%= f.input :payment_date, label: 'Date de prélèvement' %>
+            <%= f.input :user, label: 'Qui est prélevé?', collection: current_user.flat.users, :label_method => lambda { |user| user.first_name } %>
+            <%= f.input :contract_picture, label: 'Télécharger le contrat' %>
+            <%= f.input :contract_picture, as: :hidden %>
+            <%= f.button :submit, "Mettre à jour", class: "bigbutton"%>
+          <% end %>
 
-    <%= f.input :category, label: 'Catégorie', collection: Bill::CATEGORY %>
-    <%= f.input :provider, label: 'Founisseur' %>
-    <%= f.input :amount, label: 'Montant (€)' %>
-    <%= f.input :payment_date, label: 'Date de prélèvement' %>
-    <%= f.input :user, label: 'Qui est prélevé?', collection: current_user.flat.users, :label_method => lambda { |user| user.first_name } %>
-    <%= f.input :contract_picture, label: 'Télécharger le contrat' %>
-    <%= f.input :contract_picture, as: :hidden %>
-
-    <%= f.button :submit, "Mettre à jour", class: "bigbutton"%>
-  <% end %>
-
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
