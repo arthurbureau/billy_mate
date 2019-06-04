@@ -7,15 +7,17 @@
         <div class="col-12 col-lg-6">
 
       <h2>Remboursement</h2>
-      <br>
-      <img src="https://res.cloudinary.com/dzh1pkhi5/image/upload/v1559638026/undraw_wallet_aym5_cialio.svg" alt="payment-wallet" id="refund-payment">
-      <br>
-      <h4>La facture "<%= @bill.category %>" est payée par <%= @bill.user.first_name %></h4>
+      <h4>La facture "<%= @bill.category %>" est prélevée sur le compte bancaire de <%= @bill.user.first_name %></h4>
       <p>Le montant total est de <%= @bill.amount %> €</p>
 
+      <img src="https://res.cloudinary.com/dzh1pkhi5/image/upload/v1559638026/undraw_wallet_aym5_cialio.svg" alt="payment-wallet" id="refund-payment">
+      <br>
+
       <% @bill.transactions.each do |transaction| %>
-      <p>
-      <%= transaction.user.first_name %> a remboursé <%= transaction.amount %> le <%= transaction.payment_date %>
+
+
+        <p>
+      <%= transaction.user.nickname %> a déjà remboursé <%= transaction.amount %> € le <%= transaction.payment_date %>
       </p>
       <% end %>
       <% unless @user_already_paid %>
