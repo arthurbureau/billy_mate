@@ -1,4 +1,4 @@
-<div class="container py-3">
+<div class="container">
   <h2 class="my-3"> Mon tableau de bord </h2>
 
 
@@ -11,15 +11,20 @@
 <%# end %>
 
 
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
+<br>
 
   <div class="carousel-inner">
 
     <% @bills_carousel.each do |key, bills| %>
-      <div class="carousel-item <%= "active" if key == DateTime.now.month  %>  ">
+      <% if params[:query_month].present? %>
+        <div class="carousel-item <%= "active" if key == params[:query_month].to_i %>  ">
+      <% else %>
+        <div class="carousel-item <%= "active" if key == DateTime.now.month  %>  "
+      <% end %>
+
         <div class="container">
-          <h1><%= I18n.t('date.month_names')[key] %></h1>
+          <h1><%= I18n.t('date.month_names')[key] %> 2019</h1>
             <div class="row my-3">
               <div class="col-4 d-flex align-items-center">
               </div>
@@ -34,7 +39,7 @@
           <% bills.each do |bill| %>
             <div class="row my-3">
               <div class="col-4 d-flex align-items-center">
-                <h3><%= bill.category %> <%= bill.payment_date %></h3>
+                <h3><%= bill.category %></h3>
               </div>
 
               <div class="col-8 d-flex justify-content-around align-items-center" >
