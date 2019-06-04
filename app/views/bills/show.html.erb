@@ -14,19 +14,28 @@
       <br>
 
       <% @bill.transactions.each do |transaction| %>
-
-
         <p>
-      <%= transaction.user.nickname %> a déjà remboursé <%= transaction.amount %> € le <%= transaction.payment_date %>
-      </p>
+          <%= transaction.user.nickname %> a déjà remboursé <%= transaction.amount %> € le <%= transaction.payment_date %>
+        </p>
       <% end %>
+
+
       <% unless @user_already_paid %>
         <p> </p>
         <%= simple_form_for [@bill, @transaction] do |f| %>
           <%= f.association :user, as: :hidden %>
           <%= f.association :bill, as: :hidden %>
           <%= image_tag "#{@user.avatar}", class: "avatar-center" %>
-          <%= f.button :submit, "rembourse #{@transaction.amount} €", class: "bigbutton btn-lg btn-block" %>
+
+
+
+          <div class="bigbutton btn-lg btn-block transaction-box" id="alert-transaction">
+            <p>Rembourse <%=  @transaction.amount%> €</p>
+          </div>
+          <div class="cache-button">
+            <%= f.button :submit, id: "add-transaction", as: :hidden %>
+          </div>
+
         <% end %>
       <% end %>
 

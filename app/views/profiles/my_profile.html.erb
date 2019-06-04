@@ -21,11 +21,15 @@
           <%= link_to edit_bill_path(bill), class: "edited-bill" do%>
           <i class="far fa-edit card-text"></i>
         <% end %>
+
       </div>
-      <div class="card-booking-right">
-          <%= link_to bill_path(bill), method: :delete, id: "delete-link", class: "deleted-bill" do %>
+      
+
+       <div class="card-booking-right">
+        <div class="delete-box" id="<%= bill.id %> alert-delete-bill">
           <i class="fas fa-trash-alt" ></i>
-          <% end %>
+        </div>
+        <%= link_to "", bill_path(bill), method: :delete, id: "#{bill.id}delete-link", class: "hidden" %>
       </div>
     </div>
 
