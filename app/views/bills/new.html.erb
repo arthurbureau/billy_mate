@@ -9,6 +9,7 @@
           <h2><%= @category %></h2>
         <% else %>
           <h2>Ajouter une facture</h2>
+          <br>
         <% end %>
 
         <%= simple_form_for [@bill] do |f| %>
@@ -21,8 +22,8 @@
           <%= f.input :amount, label: 'Montant' %>
           <%= f.input :payment_date, label: 'Date de prélèvement' %>
           <%= f.input :user, label: 'Qui est prélevé ?', collection: current_user.flat.users, :label_method => lambda { |user| user.first_name } %>
-          <%= f.input :contract_picture, label: 'Ajouter le contrat' %>
-          <%= f.input :contract_picture, as: :hidden %>
+          <%#= f.input :contract_picture, label: 'Ajouter le contrat' %>
+          <%#= f.input :contract_picture, as: :hidden %>
 
           <%= f.button :submit, "Ajouter", class: "bigbutton" %>
           <% end %>
