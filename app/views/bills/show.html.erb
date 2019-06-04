@@ -1,26 +1,25 @@
-<div class="container">
-<h2>Remboursement</h2>
-<br>
-<h3>La facture "<%= @bill.category %>" est payée par <%= @bill.user.first_name %></h3>
-<h3>Le montant total est de <%= @bill.amount %> €</h3>
+<div class="background-refund">
 
+  <div class="refund container">
+  <h2>Remboursement</h2>
+  <br>
+  <h3>La facture "<%= @bill.category %>" est payée par <%= @bill.user.first_name %></h3>
+  <h3>Le montant total est de <%= @bill.amount %> €</h3>
 
-<% @bill.transactions.each do |transaction| %>
-<p>
-<%= transaction.user.first_name %> a remboursé <%= transaction.amount %> le <%= transaction.payment_date %>
-</p>
-<% end %>
-
-<% unless @user_already_paid %>
-
-  <p> </p>
-  <%= simple_form_for [@bill, @transaction] do |f| %>
-    <%= f.association :user, as: :hidden %>
-    <%= f.association :bill, as: :hidden %>
-
-    <%= f.button :submit, "Rembourser #{@transaction.amount} €", class: "bigbutton btn-lg btn-block" %>
+  <% @bill.transactions.each do |transaction| %>
+  <p>
+  <%= transaction.user.first_name %> a remboursé <%= transaction.amount %> le <%= transaction.payment_date %>
+  </p>
   <% end %>
+  <% unless @user_already_paid %>
+    <p> </p>
+    <%= simple_form_for [@bill, @transaction] do |f| %>
+      <%= f.association :user, as: :hidden %>
+      <%= f.association :bill, as: :hidden %>
 
-<% end %>
+      <%= f.button :submit, "Rembourser #{@transaction.amount} €", class: "bigbutton btn-lg btn-block" %>
+    <% end %>
+  <% end %>
+  </div>
 
 </div>

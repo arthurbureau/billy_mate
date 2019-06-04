@@ -2,13 +2,13 @@
   <h2> Mon tableau de bord </h2>
 <br>
 
-<%= form_tag bills_path, method: :get do %>
-  <%= text_field_tag :query_month,
+<%#= form_tag bills_path, method: :get do %>
+  <%#= text_field_tag :query_month,
     params[:query_month],
     class: "form-control",
     placeholder: "Donne un mois en chiffre"
   %>
-<% end %>
+<%# end %>
 
 
   <h2> <%= @month_name %></h2>
