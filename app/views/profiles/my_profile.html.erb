@@ -1,53 +1,49 @@
 <div class="container">
+  <div class="my_profil_set text-center mt-3" >
+    <%= cl_image_tag current_user.avatar, class: "avatar-big", alt: "avatar-big" %>
+    <h2 class='mb-3'> Hello <%= current_user.nickname %> ! </h2>
 
-<div class="my_profil_set" >
+    <h3 class="border-top"> Mes factures </h3>
 
-<h2>Hello <%= current_user.nickname %></h2>
+    <br>
 
-<h3> Mes factures </h3>
-<br>
-
-  <% @bills.each do |bill| %>
-
-    <div class="d-flex w-100 justify-content-between mb-4">
-      <div>
-        <%= bill.category %> - <%= bill.provider %> - <%= bill.amount %> €
+    <% @bills.each do |bill| %>
+      <div class="d-flex w-100 justify-content-between mb-4">
+        <div>
+          <%= bill.category %> - <%= bill.provider %> - <%= bill.amount %> €
+        </div>
+        <%= link_to edit_bill_path(bill), class: "edited-bill" do%>
+          <i class="far fa-edit card-text"></i>
+        <% end %>
+        <%= link_to bill_path(bill), method: :delete, id: "delete-link", class: "deleted-bill" do %>
+          <i class="fas fa-trash-alt" ></i>
+        <% end %>
       </div>
-      <%= link_to edit_bill_path(bill), class: "edited-bill" do%>
-        <i class="far fa-edit card-text"></i>
-      <% end %>
-      <%= link_to bill_path(bill), method: :delete, id: "delete-link", class: "deleted-bill" do %>
-        <i class="fas fa-trash-alt" ></i>
-      <% end %>
+    <% end %>
+
+    <div class="d-flex justify-content-around mb-4">
+      <%= link_to "Ajouter une facture", new_bill_path, class: "middlebutton" %>
     </div>
 
-  <% end %>
-
-  <%= link_to "Ajouter une facture", new_bill_path, class: "middlebutton" %>
-<br>
-<br>
-
-  <h3> Mes échéances </h3>
-<br>
 
 
-  <h3> Mon appartement </h3>
-<br>
 
-<div class="d-flex w-100 justify-content-between mb-4">
-  <div>
-     <%= current_user.flat.name %>
-  </div>
+    <h3 class="border-top"> Mon appartement </h3>
+    <br>
 
+    <div class="d-flex w-100 justify-content-around mb-4">
+      <div>
+        <p><%= current_user.flat.name %></p>
+      </div>
       <%= link_to edit_flat_path(current_user.flat), class: "edited-bill" do%>
         <i class="far fa-edit card-text"></i>
       <% end %>
-        <i class="fas fa-trash-alt" ></i>
+      <i class="fas fa-trash-alt" ></i>
+    </div>
 
-
-</div>
-
- <div class="fake-input">
+    <p>Lien à partager à tes colocataires :</p>
+    <div class="fake-input">
       <p><%= current_user.flat.token %></p>
-     </div>
-
+    </div>
+  </div>
+</div>

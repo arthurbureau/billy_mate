@@ -1,3 +1,5 @@
+require 'date'
+
 class BillsController < ApplicationController
   def display_categories
     @bills = current_user.flat.bills
@@ -8,14 +10,18 @@ class BillsController < ApplicationController
   end
 
   def index
+    params[:query_month]
     redirect_to root_path unless current_user.flat
     if params[:query_month].present?
       @month = params[:query_month].to_i
+      @month_name = Date::MONTHNAMES[params[:query_month].to_i]
     else
       @month = DateTime.now.month
+      @month_name = DateTime.now.strftime('%B')
     end
     @bills = current_user.flat.bills.select { |bill| bill.payment_date.month == @month }
     @bills_carousel = Bill.all.group_by { |bill| bill.payment_date.month }
+
   end
 
   def show
@@ -44,20 +50,12 @@ class BillsController < ApplicationController
 
   def create
     @category = params[:bill][:category]
-    user_payeur = User.find(params[:bill][:user].to_i) if params[:bill][:user].present?
     @bill = Bill.new(set_bill_params)
     @bill.flat = current_user.flat
-    @bill.user = user_payeur
-
-    futur_bills = []
-
-    10.times do |i|
-      new_bill = @bill.dup
-      new_bill.payment_date += i.month
-      futur_bills << new_bill
-    end
-
-    if futur_bills.each(&:save!)
+    @bill.first = true
+    @bill.user = User.find(params[:bill][:user].to_i) if params[:bill][:user].present?
+    # @bill = current_user.flat.bills.new(set_bill_params)
+    if @bill.save
       flash[:notice] = "Yay! 🎉 tu as ajouté une nouvelle facture."
       redirect_to categories_path
     else
@@ -99,6 +97,6 @@ class BillsController < ApplicationController
   private
 
   def set_bill_params
-    params.require(:bill).permit(:category, :provider, :amount_cents, :amount, :payment_date, :contract_picture)
+    params.require(:bill).permit(:category, :provider, :amount_cents, :amount, :payment_date, :contract_picture, :user_id)
   end
 end

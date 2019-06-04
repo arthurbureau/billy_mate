@@ -7,9 +7,41 @@
 
 
 a {
-  text-decoration: none
+  text-decoration: none;
+  color: white;
 }
 
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.monthly-bill {
+  display: flex;
+  height: 50px;
+  justify-content: space-around;
+  align-items: center;
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+ }
+
+
+#arrow-last {
+  height: 20px;
+  i {
+   font-size: 20px;
+ }
+}
+
+#arrow-next {
+  height: 20px;
+  i {
+  font-size: 20px;
+ }
+}
 
 
 // CARROUSEL
@@ -33,4 +65,4 @@ a {
 
 .carousel-control-prev, .carousel-control-next {
   height: 20% !important;
-}
+

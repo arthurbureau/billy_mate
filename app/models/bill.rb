@@ -13,4 +13,20 @@ class Bill < ApplicationRecord
   validates :payment_date, presence: true
   validates :user_id, presence: true
   # validates :category, uniqueness: { scope: :user, message: "should happen once per year" }
+
+  after_create :next_bills, if: :first?
+
+  def first?
+    self.first
+  end
+
+  def next_bills
+    10.times do |i|
+      i = i + 1
+      new_bill = self.dup
+      new_bill.payment_date += i.month
+      new_bill.first = false
+      new_bill.save
+    end
+  end
 end

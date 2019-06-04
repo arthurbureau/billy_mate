@@ -1,4 +1,5 @@
-document.getElementById('user_avatar').addEventListener('change',
+if (document.getElementById('user_avatar')) {
+  document.getElementById('user_avatar').addEventListener('change',
   function readURL(input) {
     // debugger
     if (input.target.files && input.target.files[0]) {
@@ -17,4 +18,4 @@ document.getElementById('user_avatar').addEventListener('change',
             $('.coucou').hide()
     }
   }
-);
+);}
