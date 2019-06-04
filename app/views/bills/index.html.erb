@@ -20,7 +20,7 @@
       <% if params[:query_month].present? %>
         <div class="carousel-item <%= "active" if key == params[:query_month].to_i %>  ">
       <% else %>
-        <div class="carousel-item <%= "active" if key == DateTime.now.month  %>  "
+        <div class="carousel-item <%= "active" if key == DateTime.now.month  %>  ">
       <% end %>
 
         <div class="container">
