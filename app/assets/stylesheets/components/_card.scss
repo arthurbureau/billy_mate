@@ -1,0 +1,50 @@
+.card-booking {
+  overflow: hidden;
+  height: 60px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: 10px;
+}
+
+.card-booking img {
+  height: 100%;
+  width: 50px;
+  object-fit: cover;
+}
+
+.card-booking-infos h6 {
+  font-size: 14px;
+}
+
+.card-booking p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-booking .card-booking-infos {
+  padding: 4px;
+}
+
+.card-booking-left {
+  display: flex;
+  align-items: center;
+}
+
+.card-booking-right {
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.card > a {
+  text-decoration: none;
+  color: black;
+  padding-right: 3px;
+  &:hover {
+    text-decoration: none;
+    color: #d2c8c8;
+  }
+}
