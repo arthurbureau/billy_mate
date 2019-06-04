@@ -7,7 +7,14 @@
 
 
 a {
-  text-decoration: none
+  text-decoration: none;
+  color: white;
+}
+
+
+a:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .monthly-bill {
@@ -34,4 +41,28 @@ a {
   i {
   font-size: 20px;
  }
+}
+
+
+// CARROUSEL
+
+.carousel-inner {
+  position: none
+}
+
+.arrow-carousel {
+  height: 40px;
+  position: relative;
+
+}
+.carousel-control-prev > i {
+  color: black !important;
+}
+
+.carousel-control-next > i {
+  color: black !important;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  height: 20% !important;
 }
