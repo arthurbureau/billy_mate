@@ -24,7 +24,7 @@
           <%= f.input :user, label: 'Qui est prélevé ?', collection: current_user.flat.users, :label_method => lambda { |user| user.first_name } %>
           <%#= f.input :contract_picture, label: 'Ajouter le contrat' %>
           <%#= f.input :contract_picture, as: :hidden %>
-
+<br>
           <%= f.button :submit, "Ajouter", class: "bigbutton" %>
           <% end %>
 
