@@ -1,3 +1,5 @@
+require 'date'
+
 class BillsController < ApplicationController
   def display_categories
     @bills = current_user.flat.bills
@@ -12,10 +14,13 @@ class BillsController < ApplicationController
     redirect_to root_path unless current_user.flat
     if params[:query_month].present?
       @month = params[:query_month].to_i
+      @month_name = Date::MONTHNAMES[params[:query_month].to_i]
     else
       @month = DateTime.now.month
+      @month_name = DateTime.now.strftime('%B')
     end
     @bills = current_user.flat.bills.select { |bill| bill.payment_date.month == @month }
+    @months = Bill.all.group_by{|bill| bill.payment_date.month}.keys
   end
 
   def show
