@@ -6,13 +6,13 @@
   margin: 10px;
 }
 
-.card-booking img {
-  height: 100%;
-  width: 50px;
+.card-booking-photo img {
+  height: 40px;
+  width: 40px;
   object-fit: cover;
 }
 
-.card-booking-infos h6 {
+.card-booking-infos > h6 {
   font-size: 14px;
 }
 
@@ -33,10 +33,15 @@
   align-items: center;
 }
 
+.card-booking-photo {
+  padding: 10px;
+}
+
 .card-booking-right {
   align-items: center;
   justify-content: center;
   padding: 8px;
+  margin: 8px;
 }
 
 .card > a {
