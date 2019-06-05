@@ -40,13 +40,13 @@
       <%= link_to "Ajouter une facture", new_bill_path, class: "middlebutton" %>
     </div>
 
-    <h3 class="border-top"> Mon appartement </h3>
+    <h3 class="border-top"> Ma Colocation </h3>
     <br>
     <div class="card-booking d-flex justify-content-between align-items-center">
       <div class="card-booking-left">
         <img src="https://res.cloudinary.com/dzh1pkhi5/image/upload/v1559737869/home_da3txe.png">
           <div class="card-booking-infos">
-              <h6><%= current_user.flat.name %></h6>
+              <h6 id="flatname"><%= current_user.flat.name %></h6>
           </div>
       </div>
       <div class="card-booking-right">
