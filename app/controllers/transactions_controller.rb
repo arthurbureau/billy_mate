@@ -7,11 +7,10 @@ class TransactionsController < ApplicationController
       redirect_to bills_path(query_month: @transaction.bill.payment_date.month)
     else
       redirect_to bills_path(query_month: @transaction.bill.payment_date.month)
-
     end
   end
 
-  def lydia_request_
+  def lydia_request
     url = 'https://homologation.lydia-app.com/api/payment/init.json'
     params = {
       provider_token: "5cf67f0ac45e8598414133",
