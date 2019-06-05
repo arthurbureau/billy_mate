@@ -15,7 +15,7 @@
 
       <% @bill.transactions.each do |transaction| %>
         <p>
-          <%= transaction.user.nickname %> a déjà remboursé <%= transaction.amount %> € le <%= transaction.payment_date %>
+          <%= transaction.user.nickname %> a déjà remboursé <%= transaction.amount %> €
         </p>
       <% end %>
 
