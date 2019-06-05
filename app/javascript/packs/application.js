@@ -14,7 +14,7 @@ BillDeleteBoxId.forEach( (idSolo) => {
   const id = `${idSolo} alert-delete-bill`;
 
   const options = {
-    title: "🙉 Es-tu sûre ? 🙉",
+    title: "🧾 Es-tu sûr 🧾 ?",
     text: "Tu vas supprimer définitivement une facture. Cette action est irréversible.",
     icon: "warning"
   };
@@ -33,8 +33,8 @@ BillDeleteBoxId.forEach( (idSolo) => {
 // SWEET ALERT REFUND
 
 initSweetalert('alert-transaction', {
-  title: "Are you sure?",
-  text: "This action cannot be reversed",
+  title: " 💰 Es-tu sûr? 💰 ",
+  text: "Remboursement de la facture via Lydia. Cette action est irréversible",
   icon: "warning"
 }, (value) => {
   if (value) {
