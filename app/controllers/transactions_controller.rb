@@ -11,6 +11,19 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def lydia_request_
+    url = 'https://homologation.lydia-app.com/api/payment/init.json'
+    params = {
+      provider_token: "5cf67f0ac45e8598414133",
+      recipient: "+33681101126",
+      amount: "12,3",
+      currency: "EUR",
+      payer_info: "+33763304914"
+    }
+    result = RestClient.post(url, params)
+    puts result
+  end
+
   private
 
   def transaction_params
