@@ -244,6 +244,7 @@ DEPENDENCIES
   rails (= 5.2.3)
   rails-i18n (= 5.0.3)
   redis
+  rest-client
   sassc-rails
   simple_form
   spring
