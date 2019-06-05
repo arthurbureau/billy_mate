@@ -15,7 +15,7 @@
 
       <% @bill.transactions.each do |transaction| %>
         <p>
-          <%= transaction.user.nickname %> a déjà remboursé <%= transaction.amount %> € le <%= transaction.payment_date %>
+          <%= transaction.user.nickname %> a déjà remboursé <%= transaction.amount %> €
         </p>
       <% end %>
 
@@ -30,7 +30,7 @@
 
 
           <div class="bigbutton btn-lg btn-block transaction-box" id="alert-transaction">
-            <p>Rembourse <%=  @transaction.amount%> €</p>
+            <p> Rembourse <%= @transaction.amount %> €</p>
           </div>
           <div class="cache-button">
             <%= f.button :submit, id: "add-transaction", as: :hidden %>

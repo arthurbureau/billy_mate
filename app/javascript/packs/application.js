@@ -4,6 +4,7 @@ import "dropdown-el";
 
 import swal from 'sweetalert';
 import { initSweetalert } from '../plugins/init_sweetalert';
+import { copyToClipboard } from '../plugins/init_copy';
 
 // SWEET ALERT BILL
 
@@ -14,7 +15,7 @@ BillDeleteBoxId.forEach( (idSolo) => {
   const id = `${idSolo} alert-delete-bill`;
 
   const options = {
-    title: "🧾 Es-tu sûr 🧾 ?",
+    title: "💰 Es-tu sûr 💰 ?",
     text: "Tu vas supprimer définitivement une facture. Cette action est irréversible.",
     icon: "warning"
   };
