@@ -22,4 +22,19 @@ class User < ApplicationRecord
   def to_s
     first_name
   end
+
+  def lydia_md5_encode
+    user_infos = {
+      email: email,
+      firstname: first_name,
+      lastname: last_name,
+      mobilenumber: phone_number
+    }
+    arr = []
+    user_infos.each do |key, value|
+      arr << "#{key}=#{value}"
+    end
+    Digest::MD5.hexdigest arr.join('&')
+  end
+
 end
