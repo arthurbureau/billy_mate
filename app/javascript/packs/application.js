@@ -1,6 +1,6 @@
 import "bootstrap";
 import "update_button_avatar";
-
+import "dropdown-el";
 
 import swal from 'sweetalert';
 import { initSweetalert } from '../plugins/init_sweetalert';
