@@ -4,6 +4,7 @@ import "update_button_avatar";
 
 import swal from 'sweetalert';
 import { initSweetalert } from '../plugins/init_sweetalert';
+import { copyToClipboard } from '../plugins/init_copy';
 
 // SWEET ALERT BILL
 

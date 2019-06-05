@@ -1,0 +1,4 @@
+meta_product_name: "Billy Mate"
+meta_title: "Billy Mate"
+meta_description: "l'application qui t'aide à régler tes factures en colocation"
+meta_image: "cover.png" # should exist in `app/assets/images/`
