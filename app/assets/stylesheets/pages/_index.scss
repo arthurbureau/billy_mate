@@ -45,7 +45,7 @@ a:hover {
 
 .background-carousel {
   background-color: white;
-  height: 450px;
+
   border: 1px solid #d1cfcf;
 }
 
@@ -71,5 +71,7 @@ a:hover {
 }
 
 .carousel-control-prev, .carousel-control-next {
-  height: 90px !important;
+  height: 70px !important;
+  z-index: 0;
+
 }

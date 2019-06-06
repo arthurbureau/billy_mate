@@ -1,8 +1,8 @@
 <div class="container">
 
-  <h2 class="mb-5 mt-3">Choisis une catégorie</h2>
+  <h2 class="mb-3">Choisis une catégorie</h2>
 
-  <div class="my-5">
+  <div class="m-3">
     <% if @bill_gaz_present %>
       <%= link_to "Gaz", new_bill_path(category: 'Gaz'),  class: "btn btn-secondary btn-lg disabled btn-block" %>
     <% else %>
@@ -10,7 +10,7 @@
     <% end %>
   </div>
 
-  <div class="my-5">
+  <div class="m-3">
     <% if @bill_elec_present %>
       <%= link_to "Electricité", new_bill_path(category: 'Gaz'),  class: "btn btn-secondary btn-lg btn-block disabled" %>
     <% else %>
@@ -18,7 +18,7 @@
     <% end %>
   </div>
 
-  <div class="my-5">
+  <div class="m-3">
     <% if @bill_internet_present %>
       <%= link_to "Internet", new_bill_path(category: 'Gaz'),  class: "btn btn-secondary btn-lg btn-block disabled" %>
     <% else %>
@@ -26,11 +26,16 @@
     <% end %>
   </div>
 
-  <div class="my-5">
+  <div class="m-3">
     <%= link_to "Autre", new_bill_path,  class: "bigbutton btn-lg btn-block" %>
   </div>
 
-  <div class="my-5">
+<div class="home-card-margin-category">
+  <img class="img-coloc-home" src="https://res.cloudinary.com/dzh1pkhi5/image/upload/v1559829362/undraw_voting_nvu7_chd8gd.svg" alt="">
+</div>
+
+
+  <div>
     <div class="d-flex justify-content-center fixed-bottom">
       <%= link_to "Terminer", bills_path,  class: "bigbutton btn-lg" %>
     </div>

@@ -16,6 +16,7 @@ $green: #006378;
   width: $width;
   margin: 0 auto;
 
+
   margin-bottom: 1em; // Cosmetic value
 
   dt{
@@ -54,6 +55,8 @@ $green: #006378;
       left: 0;
       top: -$height;
       width: 100%;
+
+       z-index: 1;
 
       list-style: none;
       background: #fff none repeat scroll 0 0;

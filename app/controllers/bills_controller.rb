@@ -30,7 +30,7 @@ class BillsController < ApplicationController
       @bill = Bill.find(params[:id])
 
       if @bill.user == @user
-        flash[:alert] = "Tu ne peux pas te rembourser toi-même.  "
+        flash[:alert] = "🥴 Tu ne peux pas te rembourser toi-même."
         redirect_to bills_path
       else
         @transaction = Transaction.new(bill: @bill, user: @user)
@@ -56,7 +56,7 @@ class BillsController < ApplicationController
     @bill.user = User.find(params[:bill][:user].to_i) if params[:bill][:user].present?
     # @bill = current_user.flat.bills.new(set_bill_params)
     if @bill.save
-      flash[:notice] = "Yay! 🎉 tu as ajouté une nouvelle facture. "
+      flash[:notice] = "🎉 Tu as ajouté une nouvelle facture. "
       redirect_to categories_path
     else
       render :new
@@ -67,7 +67,7 @@ class BillsController < ApplicationController
     @bill = Bill.find(params[:id])
     if current_user == @bill.user
     else
-      flash[:alert] = "Seul le titulaire du contrat peut modifier une facture.  "
+      flash[:alert] = "🧐 Seul le titulaire du contrat peut modifier une facture."
       redirect_to profile_path
     end
   end
@@ -75,7 +75,7 @@ class BillsController < ApplicationController
   def update
     @bill = Bill.find(params[:id])
     if @bill.update(set_bill_params)
-      flash[:notice] = "Yay! 🎉 tu as modifié avec succès la facture. "
+      flash[:notice] = "🎉 Tu as modifié avec succès la facture. "
       redirect_to profile_path
     else
       render :edit
@@ -86,10 +86,10 @@ class BillsController < ApplicationController
     @bill = Bill.find(params[:id])
     if current_user == @bill.user
       @bill.destroy
-      flash[:alert] = "Tu viens de supprimer une facture.  "
+      flash[:alert] = "😱 Tu viens de supprimer une facture."
       redirect_to profile_path
     else
-      flash[:alert] = "Seule le titulaire du contrat peut supprimer une facture.  "
+      flash[:alert] = "🧐 Seul le titulaire du contrat peut supprimer une facture."
       redirect_to profile_path
     end
   end
