@@ -23,7 +23,7 @@
           <%= image_tag "#{@user.avatar}", class: "avatar" %>
         </div>
         <p>Procéder au remboursement de <%= @user.first_name %></p>
-        <%= simple_form_for [@bill, @transaction] do |f| %>
+        <%= simple_form_for [@bill, @transaction], remote: true do |f| %>
           <%= f.association :user, as: :hidden %>
           <%= f.association :bill, as: :hidden %>
 
@@ -36,7 +36,6 @@
           <div class="cache-button">
             <%= f.button :submit, id: "add-transaction", as: :hidden %>
           </div>
-
         <% end %>
       <% end %>
     </div>
