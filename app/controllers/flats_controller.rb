@@ -20,7 +20,7 @@ class FlatsController < ApplicationController
     if @flat.save
       current_user.flat = @flat
       current_user.save
-      flash[:notice] = "Youpi! 🎉 tu viens de créer ta coloc!"
+      flash[:notice] = "Youpi! 🎉 tu viens de créer ta coloc!  "
       redirect_to bills_path
     else
       render :new
@@ -34,7 +34,7 @@ class FlatsController < ApplicationController
   def update
     @flat = Flat.find(params[:id])
     if @flat.update(set_flat_params)
-      flash[:notice] = "Super! 🎉 tu viens de modifier les paramètres de ta coloc."
+      flash[:notice] = "Super! 🎉 tu viens de modifier les paramètres de ta coloc'.  "
       redirect_to profile_path
     else
       render :edit
@@ -45,10 +45,10 @@ class FlatsController < ApplicationController
     @flat = Flat.find(params[:id])
     if current_user == @flat.user
       @flat.destroy
-      flash[:alert] = "Tu viens de quitter ta coloc"
+      flash[:alert] = "Tu viens de quitter ta coloc!  "
       redirect_to profile_path
     else
-      flash[:alert] = "Tu n'es pas autorisé à faire cette action"
+      flash[:alert] = "Tu n'es pas autorisé à faire cette action.  "
       redirect_to flat_path(@flat)
     end
   end
