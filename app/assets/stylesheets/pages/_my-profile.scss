@@ -34,17 +34,23 @@
 
 .fake-input > p {
   margin: 0px;
-  color: #495057;
 }
 
 .icon {
-  width: 44px;
-  height: 41px;
+  width: 40px;
+  height: 42px;
   margin-top: -16px;
-  margin-left: -12px;
+  margin-left: -13px;
+  padding: 4px;
   border: 1px solid #d1cfcf;
+  background-color: white;
 }
 
 .btn-group {
   margin-left: 46px;
+}
+
+.link-to-share > p {
+  color: black;
+  margin: 13px
 }

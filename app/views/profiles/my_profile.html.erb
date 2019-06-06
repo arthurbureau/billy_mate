@@ -3,7 +3,7 @@
     <%= cl_image_tag current_user.avatar, class: "avatar-big", alt: "avatar-big" %>
     <h2 class='mb-3'> Hello <%= current_user.nickname %> ! </h2>
 
-    <h3 class="border-top"> Mes factures </h3>
+    <h3 class="border-top my-3"> Mes factures </h3>
 
 
  <dl class="dropdown-el">
@@ -60,9 +60,9 @@
     </div>
     <% end %>
     </div>
-    <br>
-    <div class="d-flex justify-content-around mb-4">
-      <%= link_to "Ajouter une facture", new_bill_path, class: "middlebutton" %>
+
+    <div class="d-flex justify-content-around my-4">
+      <%= link_to "Ajouter une facture", new_bill_path, class: "middlebutton btn-lg" %>
     </div>
 
     <h3 class="border-top mb-3"> Ma colocation </h3>
@@ -86,14 +86,16 @@
           <i class="fas fa-trash-alt" ></i>
       </div>
     </div>
-
-    <p>Lien à partager à mes colocataires.</p>
+    <div class='link-to-share'>
+      <p>Lien à partager à mes colocataires.</p>
+    </div>
     <div class="btn-group">
       <div class="fake-input mb-3">
         <p><%= current_user.flat.token %></p>
       </div>
       <button type="button" class="btn btn-default btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" data-copy="<%= current_user.flat.token %>" title="Copy to clipboard">
-      <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,9H7V7H17M17,13H7V11H17M14,17H7V15H14M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z" /></svg>
+     <!--  <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,9H7V7H17M17,13H7V11H17M14,17H7V15H14M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z" /></svg> -->
+     <img src="https://res.cloudinary.com/dzh1pkhi5/image/upload/v1559749345/copy-item_k6tr5v.svg" alt="" class='icon'>
       </div>
   </div>
 </div>
