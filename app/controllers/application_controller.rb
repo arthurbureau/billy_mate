@@ -13,7 +13,6 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options
-  { host: ENV["www.billy-mate.pro"] || "localhost:3000" }
-end
-
+    { host: ENV["www.billy-mate.pro"] || "localhost:3000" }
+  end
 end
