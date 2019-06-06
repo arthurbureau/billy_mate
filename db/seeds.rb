@@ -30,8 +30,8 @@ avatar1 = "https://res.cloudinary.com/dzh1pkhi5/image/upload/v1559744384/arthuri
 avatar2 = "https://res.cloudinary.com/dzh1pkhi5/image/upload/v1559744242/32821398_1919473874742877_7128333856549109760_o_gkiplg.jpg"
 
 
-user1 = User.new(nickname: 'Tutur', first_name: 'Arthur', last_name: 'Bureau', phone_number: '06 81 10 11 26', email: 'arthur@gmail.com', password: 'xxxxxxx', flat: flat1)
-user2 = User.new(nickname: 'Romish', first_name: 'Roman', last_name: 'Prat-Bourdon', phone_number: '06 41 16 98 26', email: 'roman@gmail.com', password: 'xxxxxxx', flat: flat1)
+user1 = User.new(nickname: 'Tutur', first_name: 'Arthur', last_name: 'Bureau', phone_number: '+33681101126', email: 'arthur@gmail.com', password: 'xxxxxxx', flat: flat1)
+user2 = User.new(nickname: 'Romish', first_name: 'Roman', last_name: 'Prat-Bourdon', phone_number: '+33641169826', email: 'roman@gmail.com', password: 'xxxxxxx', flat: flat1)
 
 user1.remote_avatar_url = avatar1
 user1.save!
