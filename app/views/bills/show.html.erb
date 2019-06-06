@@ -30,11 +30,11 @@
 
 
 
-          <div class="bigbutton btn-lg btn-block transaction-box" id="alert-transaction">
-            <p> Rembourse <%= @transaction.amount %> €</p>
+          <div c id="alert-transaction">
+
           </div>
-          <div class="cache-button">
-            <%= f.button :submit, id: "add-transaction", as: :hidden %>
+          <div class="bigbutton btn-lg btn-block transaction-box">
+            <%= f.button :submit, "Rembourse #{@transaction.amount} €", id: "add-transaction" %>
           </div>
         <% end %>
       <% end %>
