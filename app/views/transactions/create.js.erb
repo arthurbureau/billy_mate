@@ -1,0 +1,6 @@
+// OPEN NEW TAB TO @lydia_url
+console.log("hello");
+console.log('<%= @lydia_url %>');
+
+window.open('<%= @lydia_url %>', '_blank');
+window.location = '/bills?query_month=<%= @transaction.bill.payment_date.month %>'
