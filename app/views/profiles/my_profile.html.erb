@@ -7,7 +7,31 @@
     <br>
 
 
-    <% @bills.each do |bill| %>
+ <dl class="dropdown-el">
+  <dt><a><span><%= I18n.t('date.month_names')[@month] %></span></a></dt>
+    <dd>
+      <ul>
+        <li><a href="/my_profile?utf8=%E2%9C%93&query_month=1">Janvier</a></li>
+        <li><a class="default" href="/my_profile?utf8=%E2%9C%93&query_month=2">Février</a></li>
+        <li><a href="/my_profile?utf8=%E2%9C%93&query_month=3">Mars</a></li>
+        <li><a href="/my_profile?utf8=%E2%9C%93&query_month=4">Avril</a></li>
+        <li><a href="/my_profile?utf8=%E2%9C%93&query_month=5">Mai </a></li>
+        <li><a href="/my_profile?utf8=%E2%9C%93&query_month=6">Juin</a></li>
+        <li><a href="/my_profile?utf8=%E2%9C%93&query_month=7">Juillet</a></li>
+        <li><a href="/my_profile?utf8=%E2%9C%93&query_month=8">Août</a></li>
+        <li><a href="/my_profile?utf8=%E2%9C%93&query_month=9">Septembre</a></li>
+        <li><a href="/my_profile?utf8=%E2%9C%93&query_month=10">Octobre</a></li>
+        <li><a href="/my_profile?utf8=%E2%9C%93&query_month=11">Novembre</a></li>
+        <li><a href="/my_profile?utf8=%E2%9C%93&query_month=12">Décembres</a></li>
+
+      </ul>
+    </dd>
+  </dl>
+
+
+
+
+    <% @bills_month.each do |bill| %>
 
 
     <div class="card-booking d-flex justify-content-between align-items-center">

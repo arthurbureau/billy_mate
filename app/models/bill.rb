@@ -1,5 +1,5 @@
 class Bill < ApplicationRecord
-  CATEGORY = ['Electricité', 'Internet', 'Gaz', 'Eau', 'Netflix', 'Being', 'Canal+', 'Offres TV']
+  CATEGORY = ['Electricité', 'Internet', 'Gaz', 'Eau', 'Offres TV', 'Ass. Habit°', 'Canal +']
 
   belongs_to :user
   belongs_to :flat
