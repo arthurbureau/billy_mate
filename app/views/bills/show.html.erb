@@ -2,9 +2,7 @@
   <br>
   <br>
   <div class="container">
-    <div class="refund-form">
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-6">
+    <div class="refund-form justify-content-center">
 
       <h2>Remboursement</h2>
       <h4>La facture "<%= @bill.category %>" est prélevée sur le compte bancaire de <%= @bill.user.first_name %></h4>
@@ -21,11 +19,14 @@
 
 
       <% unless @user_already_paid %>
-        <p> </p>
+        <div class=" d-flex align-items-center justify-content-center mt-3">
+          <%= image_tag "#{@user.avatar}", class: "avatar" %>
+        </div>
+        <p>Procéder au remboursement de <%= @user.first_name %></p>
         <%= simple_form_for [@bill, @transaction] do |f| %>
           <%= f.association :user, as: :hidden %>
           <%= f.association :bill, as: :hidden %>
-          <%= image_tag "#{@user.avatar}", class: "avatar-center" %>
+
 
 
 
@@ -38,9 +39,6 @@
 
         <% end %>
       <% end %>
-
-        </div>
-      </div>
     </div>
   </div>
 </div>

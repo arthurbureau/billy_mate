@@ -112,8 +112,8 @@ fr:
       already_signed_out: Déconnecté(e).
       new:
         sign_in: Connexion
-      signed_in: Connecté(e).
-      signed_out: Déconnecté(e).
+      signed_in: Bienvenue 🙋‍♂️.
+      signed_out: Bye bye ! 👋.
     shared:
       links:
         back: Retour
