@@ -41,19 +41,6 @@ user2.save!
 
 puts 'Creation bills'
 
-electJan = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 1, 23), first: false)
-electFev = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 2, 23), first: false)
-electMars = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 3, 23), first: false)
-electAvr = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 4, 23), first: false)
-electMai = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 5, 23), first: false)
-electJuin = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 6, 23), first: false)
-electJul = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 7, 23), first: false)
-electAout = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 8, 23), first: false)
-electSept = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 9, 23), first: false)
-electOct = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 10, 23), first: false)
-electNov = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 11, 23), first: false)
-electDec = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 12, 23), first: false)
-
 gazJan = Bill.create!(flat: flat1, category: 'Gaz', provider: 'Gaz de Bordeaux', user: user2, amount_cents: 9000, payment_date: Date.new(2019, 1, 15), first: false)
 gazFev = Bill.create!(flat: flat1, category: 'Gaz', provider: 'Gaz de Bordeaux', user: user2, amount_cents: 9000, payment_date: Date.new(2019, 2, 15), first: false)
 gazMars = Bill.create!(flat: flat1, category: 'Gaz', provider: 'Gaz de Bordeaux', user: user2, amount_cents: 9000, payment_date: Date.new(2019, 3, 15), first: false)
@@ -66,6 +53,19 @@ gazSept = Bill.create!(flat: flat1, category: 'Gaz', provider: 'Gaz de Bordeaux'
 gazOct = Bill.create!(flat: flat1, category: 'Gaz', provider: 'Gaz de Bordeaux', user: user2, amount_cents: 9000, payment_date: Date.new(2019, 10, 15), first: false)
 gazNov = Bill.create!(flat: flat1, category: 'Gaz', provider: 'Gaz de Bordeaux', user: user2, amount_cents: 9000, payment_date: Date.new(2019, 11, 15), first: false)
 gazDec = Bill.create!(flat: flat1, category: 'Gaz', provider: 'Gaz de Bordeaux', user: user2, amount_cents: 9000, payment_date: Date.new(2019, 12, 15), first: false)
+
+electJan = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 1, 23), first: false)
+electFev = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 2, 23), first: false)
+electMars = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 3, 23), first: false)
+electAvr = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 4, 23), first: false)
+electMai = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 5, 23), first: false)
+electJuin = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 6, 23), first: false)
+electJul = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 7, 23), first: false)
+electAout = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 8, 23), first: false)
+electSept = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 9, 23), first: false)
+electOct = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 10, 23), first: false)
+electNov = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 11, 23), first: false)
+electDec = Bill.create!(flat: flat1, category: 'Electricité', provider: 'EDF', user: user1, amount_cents: 6000, payment_date: Date.new(2019, 12, 23), first: false)
 
 offretvJan = Bill.create!(flat: flat1, category: 'Canal +', provider: 'Canal +', user: user1, amount_cents: 3000, payment_date: Date.new(2019, 1, 4), first: false)
 offretvFev = Bill.create!(flat: flat1, category: 'Canal +', provider: 'Canal +', user: user1, amount_cents: 3000, payment_date: Date.new(2019, 2, 4), first: false)
