@@ -97,10 +97,10 @@ gaz_transaction3 = Transaction.create!(bill: gazMars, user: user1, amount_cents:
 gaz_transaction4 = Transaction.create!(bill: gazAvr, user: user1, amount_cents: 4500, payment_date: Date.new(2019, 4, 18))
 gaz_transaction5 = Transaction.create!(bill: gazMai, user: user1, amount_cents: 4500, payment_date: Date.new(2019, 5, 18))
 
-offretv_transaction1 = Transaction.create!(bill: offretvJan, user: user1, amount_cents: 1500, payment_date: Date.new(2019, 1, 8))
-offretv_transaction2 = Transaction.create!(bill: offretvFev, user: user1, amount_cents: 1500, payment_date: Date.new(2019, 2, 8))
-offretv_transaction3 = Transaction.create!(bill: offretvMars, user: user1, amount_cents: 1500, payment_date: Date.new(2019, 3, 8))
-offretv_transaction4 = Transaction.create!(bill: offretvAvr, user: user1, amount_cents: 1500, payment_date: Date.new(2019, 4, 8))
-offretv_transaction5 = Transaction.create!(bill: offretvMai, user: user1, amount_cents: 1500, payment_date: Date.new(2019, 5, 8))
+offretv_transaction1 = Transaction.create!(bill: offretvJan, user: user2, amount_cents: 1500, payment_date: Date.new(2019, 1, 8))
+offretv_transaction2 = Transaction.create!(bill: offretvFev, user: user2, amount_cents: 1500, payment_date: Date.new(2019, 2, 8))
+offretv_transaction3 = Transaction.create!(bill: offretvMars, user: user2, amount_cents: 1500, payment_date: Date.new(2019, 3, 8))
+offretv_transaction4 = Transaction.create!(bill: offretvAvr, user: user2, amount_cents: 1500, payment_date: Date.new(2019, 4, 8))
+offretv_transaction5 = Transaction.create!(bill: offretvMai, user: user2, amount_cents: 1500, payment_date: Date.new(2019, 5, 8))
 
 puts "Seed finished !"
