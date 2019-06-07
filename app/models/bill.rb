@@ -22,7 +22,7 @@ class Bill < ApplicationRecord
   end
 
   def next_bills
-    10.times do |i|
+    6.times do |i|
       i = i + 1
       new_bill = self.dup
       new_bill.payment_date += i.month
